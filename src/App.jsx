@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <div className="flex justify-center items-center h-screen bg-gray-100">
-      <Button color="primary">Hello HeroUI</Button>
+      <Button color="primary">Hello HeroUI fff</Button>
     </div>
     </>
   )
