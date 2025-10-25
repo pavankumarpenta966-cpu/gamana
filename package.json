@@ -2,7 +2,7 @@
   "name": "my-pwa-app",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://github.com/pavankumarpenta966-cpu/gamana",
+  "homepage": "https://pavankumarpenta966-cpu.github.io/gamana/",
   "type": "module",
   "scripts": {
     "dev": "vite",
