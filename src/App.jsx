@@ -1,14 +1,12 @@
-import { Button } from '@heroui/react'
 import './App.css'
-
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './sections/HomePage'
 function App() {
 
   return (
-    <>
-      <div className="flex justify-center items-center h-screen bg-gray-100">
-      <Button color="primary">Hello HeroUI fff</Button>
-    </div>
-    </>
+   <Routes>
+    <Route path="/" element={<HomePage />} />
+   </Routes>
   )
 }
 
