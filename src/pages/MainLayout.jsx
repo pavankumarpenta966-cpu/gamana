@@ -5,7 +5,7 @@ const MainLayout = ({ children }) => {
   return (
     <>
     <Header />
-    <main>
+    <main className="min-h-screen bg-white">
         {children}
     </main>
     <Footer />
