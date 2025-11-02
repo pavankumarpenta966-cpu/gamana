@@ -2,14 +2,10 @@ import MainLayout from "../pages/MainLayout";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import CustomButton from "../components/CustomButton";
-import { Divider } from "@heroui/react";
 import InfoCount from "./InfoCount";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { useState } from "react";
-
+import CustomScroll from "../components/CustomScroll";
 export default function HomePage() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   const causes = [
     {
       title: "Mission",
@@ -32,19 +28,14 @@ export default function HomePage() {
       description:
         "GAMANA envisions communities where girls stay in school, marriages are based on choice and maturity and children grow up in safe and nurturing environments that encourage learning, participation and leadership.",
     },
+    {
+      title: "Overall Objectives",
+      image:
+        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=600&fit=crop",
+      description:
+        "GAMANA envisions communities where girls stay in school, marriages are based on choice and maturity and children grow up in safe and nurturing environments that encourage learning, participation and leadership.",
+    },
   ];
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % causes.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + causes.length) % causes.length);
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -91,7 +82,7 @@ export default function HomePage() {
               </CustomButton>
             </motion.div>
           </div>
-          <div className="absolute w-3/4 mx-auto bottom-9 left-1/2 -translate-x-1/2">
+          <div className="absolute w-3/4 mx-auto bottom-9 left-1/2 -translate-x-1/2 z-40 cursor-pointer">
             <InfoCount />
           </div>
         </section>
@@ -114,11 +105,12 @@ export default function HomePage() {
                   />
 
                   {/* Second image (overlayed, right aligned) */}
-                  {/* <img
+
+                  <img
                     src="/gamana/About2.svg"
                     alt="Group discussion"
-                    className="rounded-lg shadow-lg w-64 object-cover absolute right-0 bottom-0  translate-y-24"
-                  /> */}
+                    className="rounded-lg shadow-lg w-64 object-cover absolute -bottom-8 -right-8 "
+                  />
                 </div>
               </motion.div>
 
@@ -188,7 +180,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="w-3/4 mx-auto bg-white">
+        <section className="lg:w-3/4 w-full mx-auto bg-white">
           {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -211,37 +203,7 @@ export default function HomePage() {
           </motion.div>
           {/* Carousel Container */}
 
-          <div className="relative px-8 md:px-12">
-            {/* Prev Button */}
-            <button
-              onClick={prevSlide}
-              disabled={currentSlide === 0}
-              className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 rounded-full p-2 shadow-lg transition-colors 
-                  ${
-                    currentSlide === 0
-                      ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-emerald-700 hover:bg-emerald-800"
-                  }`}
-              aria-label="Previous slide"
-            >
-              <FaChevronLeft className="w-6 h-6 text-white " />
-            </button>
-
-            {/* Next Button */}
-            <button
-              onClick={nextSlide}
-              disabled={currentSlide === causes.length - 1}
-              className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 rounded-full p-2 shadow-lg transition-colors 
-                ${
-                  currentSlide === causes.length - 1
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-emerald-700 hover:bg-emerald-800"
-                }`}
-              aria-label="Next slide"
-            >
-              <FaChevronRight className="w-6 h-6 text-white" />
-            </button>
-
+          <div className="relative">
             {/* Cards Container */}
             <motion.div
               variants={staggerContainer}
@@ -249,60 +211,68 @@ export default function HomePage() {
               whileInView="animate"
               viewport={{ once: true }}
             >
-              <div className="overflow-hidden">
-                <div
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-                >
-                  {causes.map((cause, index) => (
-                    <div
-                      key={index}
-                      className="w-full md:w-1/3 flex-shrink-0 px-4"
-                    >
-                      <div className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
-                        <motion.div
-                          key={index}
-                          variants={fadeInUp}
-                          className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
-                        >
-                          <div className="h-64 overflow-hidden">
-                            <img
-                              src={cause.image}
-                              alt={cause.title}
-                              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                            />
-                          </div>
-                          <div className="p-6 flex-grow flex flex-col">
-                            <h3 className="text-xl font-bold text-gray-900 mb-4">
-                              {cause.title}
-                            </h3>
-                            <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
-                              {cause.description}
-                            </p>
-                            <button className="w-full bg-emerald-700 text-white py-3 rounded font-semibold hover:bg-emerald-800 transition-colors">
-                              View More
-                            </button>
-                          </div>
-                        </motion.div>
-                      </div>
+              <CustomScroll
+                slidesToShow={3}
+                dots={true}
+                arrows={true}
+                nextArrow={true}
+                prevArrow={true}
+                responsive={[
+                  {
+                    breakpoint: 1024,
+                    settings: {
+                      slidesToShow: 3,
+                    },
+                  },
+                  {
+                    breakpoint: 600,
+                    settings: {
+                      slidesToShow: 2,
+                    },
+                  },
+                  {
+                    breakpoint: 480,
+                    settings: {
+                      slidesToShow: 1,
+                    },
+                  },
+                ]}
+              >
+                {causes.map((cause, index) => (
+                  <div
+                    key={index}
+                    className="w-full md:w-1/3 flex-shrink-0 px-4"
+                  >
+                    <div className="bg-white rounded-lg shadow-md overflow-hidden h-full flex flex-col">
+                      <motion.div
+                        key={index}
+                        variants={fadeInUp}
+                        className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
+                      >
+                        <div className="h-full overflow-hidden">
+                          <img
+                            src={cause.image}
+                            alt={cause.title}
+                            className="w-full h-[20vh] object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                        <div className="p-6 flex-grow flex flex-col">
+                          <h3 className="text-xl font-bold text-gray-900 mb-4">
+                            {cause.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                            {cause.description}
+                          </p>
+                          <button className="w-full bg-emerald-700 text-white py-3 rounded font-semibold hover:bg-emerald-800 transition-colors">
+                            View More
+                          </button>
+                        </div>
+                      </motion.div>
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </div>
+                ))}
+              </CustomScroll>
             </motion.div>
-            {/* Dots */}
-            <div className="flex justify-center gap-2 mt-8">
-              {causes.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentSlide ? "bg-emerald-700" : "bg-gray-300"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
-            </div>
           </div>
         </section>
 
@@ -488,42 +458,6 @@ export default function HomePage() {
           </div>
         </div>
       </section> */}
-        <section
-          className="relative py-14"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(20, 20, 20, 0.5), rgba(57, 57, 57, 0.5)), url("/gamana/overlay.svg")',
-          }}
-        >
-          <div className="container mx-auto px-4 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-white md:flex justify-around md:w-4/5 mx-auto"
-            >
-              <div className="text-start">
-                <p className="mb-2 font-semibold text-[20px] leading-[26px] tracking-[0]">
-                  Do Good
-                </p>
-                <p className="text-2xl md:text-4xl font-bold">
-                  Join Our Mission to Improve
-                </p>
-                <p className="text-2xl md:text-4xl font-bold">the World</p>
-                <Divider className="w-1/3 bg-white mt-2 mb-8" />
-              </div>
-              <div className="flex md:justify-center gap-4 flex-wrap my-auto">
-                <CustomButton
-                  variant="bordered"
-                  className="rounded !bg-white !text-forest"
-                >
-                  Be Volunteer
-                </CustomButton>
-                <CustomButton className="rounded">Donate Now</CustomButton>
-              </div>
-            </motion.div>
-          </div>
-        </section>
       </div>
     </MainLayout>
   );

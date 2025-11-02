@@ -1,3 +1,4 @@
+export const ApiBaseUrl = "/gamana";
 export const phoneNumber = "+91 98490 78450";
 export const email = "gamanatheway@gmail.com";
 export const Info = `
@@ -31,10 +32,12 @@ export const FooterLinks = [
   },
 ]
 export const stats = [
-  { number: "20M", label: "Number of Supporters" },
-  { number: "15K+", label: "Volunteer Reached" },
-  { number: "68K+", label: "We are in Countries" },
-  { number: "10M+", label: "People Saved" },
+  { number: "2,428+", label: "Individuals Reached" },
+  { number: "1,446", label: "Empowered Adolescents" },
+  { number: "37", label: "Child Marriages Prevented" },
+  { number: "162", label: "Out-of-School Children Mainstreamed" },
+  { number: "832", label: "Girls Educated on Menstrual Health" },
+  { number: "270", label: "ASHA & Anganwadi Workers Trained" },
 ];
 
 export const causes = [
