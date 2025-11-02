@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCheckCircle } from 'react-icons/fa';
 import MainLayout from './MainLayout';
+import PageHeader from "../sections/PageHeader";
 
 const VisionPage = () => {
   const workPointsLeft = [
@@ -43,40 +44,12 @@ const VisionPage = () => {
     <MainLayout>
 
     <div className="bg-white">
-      {/* Hero Section with Breadcrumb */}
-      <div className="relative h-[250px] bg-gradient-to-r from-gray-800 to-gray-900 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1600&h=400&fit=crop"
-            alt="Community"
-            className="w-full h-full object-cover opacity-40"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40"></div>
-        </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
-          >
-            Vision
-          </motion.h1>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center gap-2 text-sm text-gray-300"
-          >
-            <span className="text-orange-400 hover:text-orange-300 cursor-pointer transition-colors">Home</span>
-            <span>/</span>
-            <span className="text-orange-400 hover:text-orange-300 cursor-pointer transition-colors">Clause</span>
-            <span>/</span>
-            <span className="text-white">Vision</span>
-          </motion.div>
-        </div>
-      </div>
+      {/* Hero Section with Image */}    
+           <PageHeader
+              title="Vision & Mission"
+              bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200"
+              breadcrumb={[{ name: "Home", path: "/" }, { name: "Vision & Mission" }]}
+            />
 
       {/* Vision Section */}
       <section className="py-16 md:py-24 bg-gray-50">

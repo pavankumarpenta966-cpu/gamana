@@ -12,7 +12,7 @@ export const OrgLogo = () => {
     <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}>
       <img src="/gamana/192.png" alt="Gamana" className="w-10 h-10" />
       <div className="flex flex-col">
-        <span className="h-text">GAMANA</span>
+        <span className="h-text capitalize">GAMANA</span>
         <span className="!text-xs sub-para">The Way for a Better Tomorrow</span>
       </div>
     </div>

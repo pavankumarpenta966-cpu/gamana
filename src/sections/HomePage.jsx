@@ -3,40 +3,16 @@ import MainLayout from "../pages/MainLayout";
 import { motion } from "framer-motion";
 import CustomButton from "../components/CustomButton";
 import InfoCount from "./InfoCount";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import CustomScroll from "../components/CustomScroll";
-export default function HomePage() {
-  const causes = [
-    {
-      title: "Mission",
-      image:
-        "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=600&fit=crop",
-      description:
-        "GAMANA envisions communities where girls stay in school, marriages are based on choice and maturity and children grow up in safe and nurturing environments that encourage learning, participation and leadership.",
-    },
-    {
-      title: "Vision",
-      image:
-        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop",
-      description:
-        "GAMANA envisions communities where girls stay in school, marriages are based on choice and maturity and children grow up in safe and nurturing environments that encourage learning, participation and leadership.",
-    },
-    {
-      title: "Overall Objectives",
-      image:
-        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=600&fit=crop",
-      description:
-        "GAMANA envisions communities where girls stay in school, marriages are based on choice and maturity and children grow up in safe and nurturing environments that encourage learning, participation and leadership.",
-    },
-    {
-      title: "Overall Objectives",
-      image:
-        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=600&fit=crop",
-      description:
-        "GAMANA envisions communities where girls stay in school, marriages are based on choice and maturity and children grow up in safe and nurturing environments that encourage learning, participation and leadership.",
-    },
-  ];
+import { Causes } from "../utils/Helper";
+import { useBreakpoints } from "../utils/Helper";
+import PartnershipPage from "../pages/PartnershipPage";
+import Testimonials from "../pages/Testimonials";
 
+
+export default function HomePage() {
+  const { lg, md, sm, xs } = useBreakpoints();
+  const slidesToShow = xs ? 1 : sm ? 2 : md ? 2 : lg ? 3 : 3;
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -82,7 +58,7 @@ export default function HomePage() {
               </CustomButton>
             </motion.div>
           </div>
-          <div className="absolute w-3/4 mx-auto bottom-9 left-1/2 -translate-x-1/2 z-40 cursor-pointer">
+          <div className="absolute w-3/4 mx-auto bottom-9 left-1/2 -translate-x-1/2  cursor-pointer">
             <InfoCount />
           </div>
         </section>
@@ -212,33 +188,13 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <CustomScroll
-                slidesToShow={3}
+                slidesToShow={slidesToShow}
                 dots={true}
                 arrows={true}
                 nextArrow={true}
                 prevArrow={true}
-                responsive={[
-                  {
-                    breakpoint: 1024,
-                    settings: {
-                      slidesToShow: 3,
-                    },
-                  },
-                  {
-                    breakpoint: 600,
-                    settings: {
-                      slidesToShow: 2,
-                    },
-                  },
-                  {
-                    breakpoint: 480,
-                    settings: {
-                      slidesToShow: 1,
-                    },
-                  },
-                ]}
               >
-                {causes.map((cause, index) => (
+                {Causes.map((cause, index) => (
                   <div
                     key={index}
                     className="w-full md:w-1/3 flex-shrink-0 px-4"
@@ -276,92 +232,88 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="w-3/4 mx-auto bg-white">
-          <div className="grid md:grid-cols-3 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <p className="text-emerald-700 font-semibold mb-3">
-                Programs & Activities
-              </p>
-              <h2 className="text-4xl font-bold mb-6 text-gray-900">
-                Lorem ipsum sed mauris erat .
-              </h2>
-              <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
-              <p className="text-gray-600 mb-8 leading-relaxed">
-                GAMANA (meaning "The Way") is a voluntary, non-profit
-                organization rooted in the Amaravati region of Andhra Pradesh,
-                India. Founded in 2007, GAMANA is dedicated to promoting child
-                rights, gender equality..
-              </p>
-              <CustomButton className="bg-emerald-700 text-white px-8 py-3 rounded hover:bg-emerald-800 transition font-semibold">
-                View More
-              </CustomButton>
-            </motion.div>
-            <div>
-              <img
-                src="/gamana/Programs.svg"
-                alt="GAMANA community gathering"
-                className="rounded-lg shadow-lg mb-8"
-              />
-            </div>
-            <motion.div
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="space-y-6">
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-emerald-700 text-white rounded-full flex items-center justify-center font-bold text-lg">
-                    01
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">
-                      Child Protection
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      At the core of GAMANA's mission is the prevention of early
-                      and forced child marriages.
-                    </p>
-                  </div>
-                </div>
+        <div
+          className="shadow-lg py-16 px-8 rounded-lg"
+          style={{
+            backgroundImage: ` url("/gamana/bgPrograms.svg")`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <section className="w-3/4 mx-auto bg-opacity-80 rounded-lg p-8">
+            <div className="grid md:grid-cols-3 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <p className="text-emerald-700 font-semibold mb-3">
+                  Programs & Activities
+                </p>
+                <h2 className="text-4xl font-bold mb-6 text-gray-900">
+                  Lorem ipsum sed mauris erat.
+                </h2>
+                <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
+                <p className="text-gray-600 mb-8 leading-relaxed">
+                  GAMANA (meaning "The Way") is a voluntary, non-profit
+                  organization rooted in the Amaravati region of Andhra Pradesh,
+                  India. Founded in 2007, GAMANA is dedicated to promoting child
+                  rights, gender equality..
+                </p>
+                <CustomButton className="bg-emerald-700 text-white px-8 py-3 rounded hover:bg-emerald-800 transition font-semibold">
+                  View More
+                </CustomButton>
+              </motion.div>
 
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-emerald-700 text-white rounded-full flex items-center justify-center font-bold text-lg">
-                    02
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">
-                      Adolescent Empowerment
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      At the core of GAMANA's mission is the prevention of early
-                      and forced child marriages.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-emerald-700 text-white rounded-full flex items-center justify-center font-bold text-lg">
-                    03
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-gray-900 mb-2">
-                      Monitoring & Evaluation
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      At the core of GAMANA's mission is the prevention of early
-                      and forced child marriages.
-                    </p>
-                  </div>
-                </div>
+              <div>
+                <img
+                  src="/gamana/Programs.svg"
+                  alt="GAMANA community gathering"
+                  className="rounded-lg shadow-xl mb-8 border border-emerald-100"
+                />
               </div>
-            </motion.div>
-          </div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 60 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="space-y-6">
+                  {[
+                    { num: "01", title: "Child Protection" },
+                    { num: "02", title: "Adolescent Empowerment" },
+                    { num: "03", title: "Monitoring & Evaluation" },
+                  ].map((item) => (
+                    <div key={item.num} className="flex gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 bg-emerald-700 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">
+                        {item.num}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-gray-900 mb-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm">
+                          At the core of GAMANA's mission is the prevention of
+                          early and forced child marriages.
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+          </section>
+        </div>
+
+        <section className="w-3/4 mx-auto bg-white">
+          <PartnershipPage />
         </section>
+
+        {/* <section className="w-3/4 mx-auto bg-gray-70">
+          <Testimonials />
+        </section> */}
 
         {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4">

@@ -3,7 +3,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import { stats } from "../utils/Helper";
 import CustomScroll from "../components/CustomScroll";
-export default function InfoCount() {
+import { useBreakpoints } from "../utils/Helper";
+export default function InfoCount() { 
+  const {lg, md,sm,xs} = useBreakpoints();
+   const slidesToShow = xs ? 1 : sm ? 2 : md ? 3 : lg ? 3 : 3;
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
     animate: { opacity: 1, y: 0 },
@@ -22,35 +25,15 @@ export default function InfoCount() {
       initial="initial"
       whileInView="animate"
       viewport={{ once: true }}
-      className="bg-cover bg-center bg-no-repeat shadow-sm rounded"
+      className="bg-cover bg-center bg-no-repeat rounded shadow-xl transition-shadow duration-500"
       style={{
         backgroundImage: 'url("/gamana/Counter.svg")',
       }}
     >
       <div className="mx-auto px-2">
-        <div className="py-8 md:py-8 gap-6">
+        <div className="py-4 gap-6 ">
           <CustomScroll
-            slidesToShow={4}
-            responsive={[
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 3,
-                },
-              },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 2,
-                },
-              },
-              {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 1,
-                },
-              },
-            ]}
+            slidesToShow={slidesToShow}           
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -58,28 +41,17 @@ export default function InfoCount() {
                 variants={fadeInUp}
                 className="text-center"
               >
-                <h3 className="text-xl md:text-xl font-bold text-forest">
+                <h3 className="text-xl md:text-3xl font-bold text-forest">
                   {stat.number}
                 </h3>
-                <p className="text-gray-600 font-semibold text-xs leading-[16px] tracking-[0] text-center align-middle">
+                <p className="text-gray-600 font-semibold text-sm leading-[16px] tracking-[0] text-center align-middle">
                   {stat.label}
                 </p>
               </motion.div>
             ))}
           </CustomScroll>
         </div>
-        {/* <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 p-4">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                variants={fadeInUp}
-                className="text-center"
-              >
-                <h3 className="text-xl md:text-xl font-bold text-forest">{stat.number}</h3>
-                <p className="text-gray-600 font-semibold text-xs leading-[16px] tracking-[0] text-center align-middle">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div> */}
+        
       </div>
     </motion.section>
   );

@@ -19,7 +19,7 @@ function PrevArrow({ onClick }) {
   );
 }
 
-export default function CustomScroll({children, slidesToShow,dots,arrows, nextArrow, prevArrow, responsive}) {
+export default function CustomScroll({children, slidesToShow,dots,arrows, nextArrow, prevArrow}) {
       var settings = {
     dots: dots ?? false,
     infinite: true,
@@ -30,7 +30,6 @@ export default function CustomScroll({children, slidesToShow,dots,arrows, nextAr
       arrows: arrows?? false,
     ...(nextArrow ? { nextArrow: <NextArrow /> } : {}),
     ...(prevArrow ? { prevArrow: <PrevArrow /> } : {}),
-     responsive: responsive
   };
   return (
       <Slider {...settings}>

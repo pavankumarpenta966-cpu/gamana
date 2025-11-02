@@ -1,3 +1,14 @@
+import { useMediaQuery } from "react-responsive";
+
+export const useBreakpoints = () => {
+  const lg = useMediaQuery({ query: "(max-width: 1200px)" });
+  const md = useMediaQuery({ query: "(max-width: 900px)" });
+  const sm = useMediaQuery({ query: "(max-width: 600px)" });
+  const xs = useMediaQuery({ query: "(max-width: 480px)" });
+
+  return { lg, md, sm, xs };
+};
+
 export const ApiBaseUrl = "/gamana";
 export const phoneNumber = "+91 98490 78450";
 export const email = "gamanatheway@gmail.com";
@@ -40,48 +51,34 @@ export const stats = [
   { number: "270", label: "ASHA & Anganwadi Workers Trained" },
 ];
 
-export const causes = [
-  {
-    title: "Mission",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    image: "/api/placeholder/400/300",
-  },
-  {
-    title: "Vision",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    image: "/api/placeholder/400/300",
-  },
-  {
-    title: "Overall Objectives",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-    image: "/api/placeholder/400/300",
-  },
-];
+export const Causes = [
+    {
+      title: "Mission",
+      image:
+        "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800&h=600&fit=crop",
+      description:
+        "GAMANA envisions communities where girls stay in school, marriages are based on choice and maturity and children grow up in safe and nurturing environments that encourage learning, participation and leadership.",
+    },
+    {
+      title: "Vision",
+      image:
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop",
+      description:
+        "GAMANA envisions communities where girls stay in school, marriages are based on choice and maturity and children grow up in safe and nurturing environments that encourage learning, participation and leadership.",
+    },
+    {
+      title: "Overall Objectives",
+      image:
+        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=600&fit=crop",
+      description:
+        "GAMANA envisions communities where girls stay in school, marriages are based on choice and maturity and children grow up in safe and nurturing environments that encourage learning, participation and leadership.",
+    },
+    {
+      title: "Overall Objectives",
+      image:
+        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=600&fit=crop",
+      description:
+        "GAMANA envisions communities where girls stay in school, marriages are based on choice and maturity and children grow up in safe and nurturing environments that encourage learning, participation and leadership.",
+    },
+  ];
 
-export const volunteers = [
-  { name: "Esther Nash", role: "VP of Marketing", rating: 5 },
-  { name: "Sarah Howard", role: "Lead Developer", rating: 5 },
-  { name: "Veronica Mckenzie", role: "Product Designer", rating: 5 },
-  { name: "Charlotte Hanson", role: "UX Designer", rating: 5 },
-];
-
-export const news = [
-  {
-    date: "20 Nov, 2024",
-    title: "Top 10 Be to Helping Unpaid Freelance",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    date: "18 Nov, 2024",
-    title: "Be the Support Contribution of Mean Really to Helping",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    date: "15 Nov, 2024",
-    title: "Keeping Kids into the Archive In the State of Houston",
-    excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-];

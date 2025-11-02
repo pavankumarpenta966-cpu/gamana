@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import MainLayout from "../pages/MainLayout";
+import PageHeader from "../sections/PageHeader";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '',
-    subject: '',
+    number: '',
     message: ''
   });
 
@@ -20,16 +20,28 @@ const ContactPage = () => {
     });
   };
 
-  const handleSubmit = () => {
-    console.log('Form submitted:', formData);
-    alert('Message sent successfully!');
+  const handleSubmit = async() => {
+    try{
+      await fetch('https://script.google.com/macros/s/AKfycbwuxRx12oRoRLIDjjs9ls2fo3nDNjvmlBx4beC_mLemOXXiKcup1It5cVRjBS5tt_d1_Q/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(formData),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+    })
+    alert('Form submitted successfully!');
+     
+  }catch(error){
+      console.error('Error submitting form:', error);
+    }
     setFormData({
       name: '',
       email: '',
-      phone: '',
-      subject: '',
+      number: '',
       message: ''
     });
+
   };
 
   const fadeInUp = {
@@ -57,16 +69,12 @@ const ContactPage = () => {
     <MainLayout>
 
     <div className="bg-white">
-      {/* Hero Section with Image */}
-      <div className="relative h-[250px] overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1600&h=400&fit=crop"
-          alt="Community gathering"
-          className="w-full h-full object-cover"
+        {/* Hero Section with Image */}    
+       <PageHeader
+          title="Contact Us"
+          bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200"
+          breadcrumb={[{ name: "Home", path: "/" }, { name: "Contact Us" }]}
         />
-        <div className="absolute inset-0 bg-black/40"></div>
-      </div>
-
       {/* Contact Section */}
       <section className="py-16 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -181,7 +189,25 @@ const ContactPage = () => {
                     />
                   </div>
 
-                  {/* Email */}
+                  {/* Phone */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      name="number"
+                      value={formData.number}
+                      onChange={handleChange}
+                      placeholder="Your Phone"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div className="gap-6">
+                 
+                   {/* Email */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Email
@@ -194,39 +220,7 @@ const ContactPage = () => {
                       placeholder="Your Email"
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
                     />
-                  </div>
-                </div>
-
-                <div className="grid sm:grid-cols-2 gap-6">
-                  {/* Phone */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Phone
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="Your Phone"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
-                    />
-                  </div>
-
-                  {/* Subject */}
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="Enter Subject"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent outline-none transition-all"
-                    />
-                  </div>
+                  </div>                 
                 </div>
 
                 {/* Message */}

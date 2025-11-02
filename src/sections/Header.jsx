@@ -26,16 +26,23 @@ export default function Header() {
       submenu: [
         { name: "About Us", path: `/about` },
         {
-          name: "Vision",
-          path: "/vision",
-          nested: [
-            { name: "Mission", path: "/vision/mission" },
-            { name: "List", path: "/vision/list" },
-          ],
+          name: "Vision & Mission",
+          path: "/vision&mission",
         },
+        { name: "Target Area", path: `/targetArea` },
+        { name: "Governance", path: `/governance` },
       ],
     },
-    { name: "WHAT WE DO", path: "/what-we-do", hasSubmenu: false },
+    {
+      name: "WHAT WE DO",
+      path: "#",
+      hasSubmenu: true,
+      submenu: [
+        { name: "Our Approach", path: `/ourApproach` },
+        { name: "Philosophy", path: `/philosophy` },
+        { name: "Programs & Activity", path: `/programs&activity` },
+      ],
+    },
     { name: "CONTACT", path: "/contact", hasSubmenu: false },
   ];
 
@@ -52,11 +59,17 @@ export default function Header() {
             <div className="flex items-center gap-6">
               <p className="flex items-center gap-1.5 text-sm">
                 <FaPhoneAlt className="w-3 h-3" />
-                {phoneNumber}
+                <a href={`tel:+91${phoneNumber}`}>{phoneNumber}</a>
+
+                
               </p>
               <span className="flex items-center gap-1.5 text-sm">
                 <HiMail className="w-4 h-4 text-white" />
-                {email}
+                <a href={`mailto:${email}?subject=Inquiry%20from%20Website&body=Hello%20GAMANA%20Team,`}>
+  {email}
+</a>
+
+                
               </span>
             </div>
             <div className="flex gap-4">
@@ -70,54 +83,61 @@ export default function Header() {
       <nav className="bg-white shadow-md sticky top-0 z-50">
         <div className="md:w-4/5 xs:px-2 px-0 mx-auto py-4 flex justify-between items-center">
           <OrgLogo />
-
           {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-8 items-center">
+          <div className="hidden md:flex gap-2 items-center">
             {navigationItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.hasSubmenu ? (
                   <div className="relative">
-                    <button className="flex items-center gap-1 text-sm font-semibold text-gray-700 hover:text-forest transition cursor-pointer">
+                    <button className="flex items-center gap-1 px-4 py-2 text-sm font-semibold text-gray-700 hover:text-green-700 transition cursor-pointer rounded hover:bg-gray-50">
                       {item.name}
                       <HiChevronDown className="w-4 h-4" />
                     </button>
 
                     {/* Desktop Dropdown */}
-                    <div className="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                      {item.submenu.map((subItem) => (
-                        <div key={subItem.name} className="relative">
-                          <Link
-                            to={subItem.path}
-                            className="flex items-center justify-between px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-forest transition first:rounded-t-lg last:rounded-b-lg"
+                    <div className="absolute left-0 mt-1 w-56 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <span className="absolute top-0 left-0 w-3 h-3 bg-white border-t border-l border-gray-200 transform rotate-45 -mt-1.5 ml-6"></span>
+                      <div className="relative z-10 py-1">
+                        {item.submenu.map((subItem) => (
+                          <div
+                            key={subItem.name}
+                            className="relative group/sub"
                           >
-                            {subItem.name}
-                            {subItem.nested && (
-                              <HiChevronDown className="w-4 h-4 -rotate-90" />
-                            )}
-                          </Link>
+                            <Link
+                              to={subItem.path}
+                              className="flex items-center justify-between transition nav-list px-4 py-2 first:rounded-t-lg last:rounded-b-lg hover:bg-gray-200 hover:text-forest"
+                            >
+                              {subItem.name}
+                              {subItem.nested && (
+                                <HiChevronDown className="w-4 h-4 -rotate-90" />
+                              )}
+                            </Link>
 
-                          {/* Nested Dropdown */}
-                          {subItem.nested && (
-                            <div className="absolute left-full top-0 ml-1 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                              {subItem.nested.map((nestedItem) => (
-                                <Link
-                                  key={nestedItem.name}
-                                  to={nestedItem.path}
-                                  className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-forest transition first:rounded-t-lg last:rounded-b-lg"
-                                >
-                                  {nestedItem.name}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
+                            {/* Nested Dropdown - Shows on hover of parent item */}
+                            {subItem.nested && (
+                              <div className="absolute left-full top-0 ml-1 w-56 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover/sub:opacity-100 group-hover/sub:visible transition-all duration-200 z-50">
+                                <span className="absolute top-0 left-0 w-3 h-3 bg-white border-t border-l border-gray-200 transform rotate-45 -ml-1.5 mt-2"></span>
+                                <div className="relative z-10 py-1">
+                                  {subItem.nested.map((nestedItem) => (
+                                    <Link
+                                      to={nestedItem.path}
+                                      className="block px-4 py-2 font-medium text-sm text-gray-700 hover:bg-gray-200 hover:text-forest transition first:rounded-t-lg last:rounded-b-lg"
+                                    >
+                                      {nestedItem.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 ) : (
                   <Link
                     to={item.path}
-                    className="text-sm font-semibold text-gray-700 hover:text-forest transition"
+                    className="transition nav-list block px-4"
                   >
                     {item.name}
                   </Link>
@@ -126,17 +146,21 @@ export default function Header() {
             ))}
           </div>
 
-          <CustomButton className="hidden md:block rounded">
+          <CustomButton className="hidden md:block rounded ">
             DONATE NOW
           </CustomButton>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => {
-              window.scrollTo({ top: 0, behavior: "smooth" });
-              setTimeout(() => setIsMenuOpen(!isMenuOpen), 600);
+              if (!isMenuOpen) {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                setTimeout(() => setIsMenuOpen(true), 300);
+              } else {
+                setIsMenuOpen(false);
+              }
             }}
-            className="md:hidden p-2 text-forest"
+            className="md:hidden p-2 text-green-700"
           >
             {isMenuOpen ? (
               <HiX className="w-6 h-6" />
