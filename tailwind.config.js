@@ -11,6 +11,7 @@ export default {
     extend: {
       colors: {
        forest: 'var(--forest)',
+        black: 'var(--black)',
       },
       fontFamily: {
         

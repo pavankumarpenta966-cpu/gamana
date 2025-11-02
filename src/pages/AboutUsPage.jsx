@@ -11,17 +11,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import MainLayout from "../pages/MainLayout";
-import PartnershipPage from "./PartnershipPage";
 import InfoCount from "../sections/InfoCount";
+import PartnershipPage from "./PartnershipPage";
 import PageHeader from "../sections/PageHeader";
 
 const AboutUsPage = () => {
-  // const [counters, setCounters] = useState({
-  //   supporters: 0,
-  //   volunteers: 0,
-  //   raised: 0,
-  //   projects: 0,
-  // });
+ 
 
   // Counter animation
   useEffect(() => {
@@ -29,22 +24,12 @@ const AboutUsPage = () => {
     const steps = 60;
     const interval = duration / steps;
 
-    // const targets = {
-    //   supporters: 20,
-    //   volunteers: 15,
-    //   raised: 68,
-    //   projects: 10,
-    // };
+
 
     let step = 0;
     const timer = setInterval(() => {
       step++;
-      // setCounters({
-      //   supporters: Math.floor((targets.supporters * step) / steps),
-      //   volunteers: Math.floor((targets.volunteers * step) / steps),
-      //   raised: Math.floor((targets.raised * step) / steps),
-      //   projects: Math.floor((targets.projects * step) / steps),
-      // });
+   
 
       if (step >= steps) clearInterval(timer);
     }, interval);
@@ -127,14 +112,15 @@ const AboutUsPage = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="mb-6">
-                <span className="text-green-700 font-semibold text-sm uppercase tracking-wide">
+                <span className="sub-h-text">
                   Welcome to GAMANA
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2 mb-4">
+                <h2 className="h-title mt-2 mb-4">
                   Helping Today
                   <br />
                   Helping Tommorow
                 </h2>
+                 <div className="w-24 h-1 bg-forest mt-4"></div>
               </div>
 
               <div className="space-y-4 text-gray-600 text-sm leading-relaxed">

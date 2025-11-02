@@ -10,21 +10,25 @@ import TargetAreaPage from "./pages/TargetAreaPage";
 import PhilosophyPage from "./pages/PhilosophyPage";
 import GovernancePage from "./pages/GovernancePage";
 import ProgramsActivityPage from "./pages/ProgramsActivityPage";
-
+import ScrollToTop from "./components/ScrollToTop";
+import OurApproachPage from "./pages/OurApproachPage";
+import Donate from "./pages/Donate";
 function App() {
   return (
     <HeroUIProvider>
+      <ScrollToTop /> 
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/vision&mission" element={<VisionPage />} />
         <Route path="/contact" element={<ContactUsPage />} />
-        <Route path="/targetArea" element={<TargetAreaPage />} />
+        <Route path="/target-area" element={<TargetAreaPage />} />
         <Route path="/philosophy" element={<PhilosophyPage />} />
         <Route path="/governance" element={<GovernancePage />} />
         <Route path="/programs&activity" element={<ProgramsActivityPage />} />
-        <Route path="/ourApproach" element={<ContactUsPage />} />
+      <Route path="/our-approach" element={<OurApproachPage />} />
+      <Route path="/donate" element={<Donate />} />
       </Routes>
     </HeroUIProvider>
   );

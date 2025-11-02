@@ -8,6 +8,7 @@ import { Causes } from "../utils/Helper";
 import { useBreakpoints } from "../utils/Helper";
 import PartnershipPage from "../pages/PartnershipPage";
 import Testimonials from "../pages/Testimonials";
+import { FaChild, FaBookOpen, FaUserFriends, FaTint, FaUsers, FaChartLine } from "react-icons/fa";
 
 
 export default function HomePage() {
@@ -25,6 +26,40 @@ export default function HomePage() {
       },
     },
   };
+
+   const programs = [
+    {
+      num: "01",
+      title: "Child Protection and Child Marriage Prevention",
+      icon: <FaChild  />,
+    },
+    {
+      num: "02",
+      title: "Education and Learning Continuity",
+      icon: <FaBookOpen  />,
+    },
+    {
+      num: "03",
+      title: "Adolescent Empowerment and Life Skills",
+      icon: <FaUserFriends  />,
+    },
+    {
+      num: "04",
+      title: "Menstrual Health and Hygiene (MHH) Education",
+      icon: <FaTint  />,
+    },
+    {
+      num: "05",
+      title: "Community Mobilisation and Governance",
+      icon: <FaUsers  />,
+    },
+    {
+      num: "06",
+      title: "Monitoring, Evaluation & Data Systems",
+      icon: <FaChartLine  />,
+    },
+  ];
+
   return (
     <MainLayout>
       <div className="flex flex-col gap-20">
@@ -58,7 +93,8 @@ export default function HomePage() {
               </CustomButton>
             </motion.div>
           </div>
-          <div className="absolute w-3/4 mx-auto bottom-9 left-1/2 -translate-x-1/2  cursor-pointer">
+          <div className="absolute w-3/4 mx-auto bottom-9 left-1/2 -translate-x-1/2 cursor-pointer"
+          >
             <InfoCount />
           </div>
         </section>
@@ -251,11 +287,11 @@ export default function HomePage() {
                 <p className="text-emerald-700 font-semibold mb-3">
                   Programs & Activities
                 </p>
-                <h2 className="text-4xl font-bold mb-6 text-gray-900">
-                  Lorem ipsum sed mauris erat.
+                <h2 className="text-2xl font-bold mb-2 text-gray-900">
+                  GAMANA’s Journey to Build Safe, Educated and Empowered Children
                 </h2>
-                <div className="h-1 w-20 bg-emerald-700 mb-6"></div>
-                <p className="text-gray-600 mb-8 leading-relaxed">
+                <div className="h-1 w-20 bg-emerald-700 mb-2"></div>
+                <p className="text-gray-600 mb-3 leading-relaxed">
                   GAMANA (meaning "The Way") is a voluntary, non-profit
                   organization rooted in the Amaravati region of Andhra Pradesh,
                   India. Founded in 2007, GAMANA is dedicated to promoting child
@@ -280,28 +316,18 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                <div className="space-y-6">
-                  {[
-                    { num: "01", title: "Child Protection" },
-                    { num: "02", title: "Adolescent Empowerment" },
-                    { num: "03", title: "Monitoring & Evaluation" },
-                  ].map((item) => (
-                    <div key={item.num} className="flex gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 bg-emerald-700 text-white rounded-full flex items-center justify-center font-bold text-lg shadow-md">
-                        {item.num}
-                      </div>
-                      <div>
-                        <h3 className="font-bold text-gray-900 mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm">
-                          At the core of GAMANA's mission is the prevention of
-                          early and forced child marriages.
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+                <div className="">
+              {programs.map((item) => (
+                <div key={item.num} className="flex items-center gap-4 mt-6 first:mt-0">
+                  <div className="flex-shrink-0 w-10 h-10 bg-forest text-white rounded-full flex items-center justify-center font-bold text-md shadow-md">
+                    {item.icon}
+                  </div>
+                  <div className="flex text-sm items-center gap-3 font-semibold text-gray-800 ">
+                      {item.title}
+                  </div>
                 </div>
+              ))}
+            </div>
               </motion.div>
             </div>
           </section>
