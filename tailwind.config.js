@@ -12,6 +12,7 @@ export default {
       colors: {
        forest: 'var(--forest)',
         black: 'var(--black)',
+        stealOrange: 'var(--stealOrange)',
       },
       fontFamily: {
         

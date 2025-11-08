@@ -11,9 +11,18 @@ import { ApiBaseUrl } from "../utils/Helper";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 // Inside your component, add at the top:
+export const DonateButton = () => {
+  const navigate = useNavigate();
+  return(
+     <CustomButton className="hidden md:block rounded" handleClick={() => {
+            navigate("/donate")
+          }}>
+            Donate Now
+          </CustomButton>
+  )
+}
 
 export default function Header() {
-  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
 
@@ -146,11 +155,7 @@ export default function Header() {
             ))}
           </div>
 
-          <CustomButton className="hidden md:block rounded" handleClick={() => {
-            navigate("/donate")
-          }}>
-            Donate Now
-          </CustomButton>
+          <DonateButton/>
 
           {/* Mobile Menu Button */}
           <button
@@ -222,13 +227,13 @@ export default function Header() {
                                 {subItem.nested && (
                                   <div className="pl-4">
                                     {subItem.nested.map((nestedItem) => (
-                                      <a
+                                      <Link
                                         key={nestedItem.name}
-                                        href={nestedItem.path}
+                                        to={nestedItem.path}
                                         className="block py-2 text-sm text-gray-500 hover:text-forest transition"
                                       >
                                         • {nestedItem.name}
-                                      </a>
+                                      </Link>
                                     ))}
                                   </div>
                                 )}
@@ -239,19 +244,17 @@ export default function Header() {
                       </AnimatePresence>
                     </div>
                   ) : (
-                    <a
-                      href={item.path}
+                    <Link
+                      to={item.path}
                       className="block py-2 text-sm font-semibold text-gray-700 hover:text-forest transition"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   )}
                 </div>
               ))}
 
-              <CustomButton className="mt-4 w-full rounded">
-                DONATE NOW
-              </CustomButton>
+             <DonateButton />
             </div>
           </motion.div>
         )}

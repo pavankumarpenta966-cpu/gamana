@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import CustomScroll from "../components/CustomScroll";
 import { useBreakpoints } from "../utils/Helper";
 import { Image } from "@heroui/react";
+import { BottomBorder } from "../sections/Footer";
 export default function PartnershipPage() {
   const { lg, md, sm, xs } = useBreakpoints();
   const slidesToShow = xs ? 1 : sm ? 2 : md ? 3 : lg ? 4 : 4;
@@ -31,7 +32,7 @@ export default function PartnershipPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
             Become Support Partner
           </h2>
-          <div className="w-24 h-1 bg-forest mt-4"></div>
+          <BottomBorder className="my-3" />
         </motion.div>
         <CustomScroll slidesToShow={slidesToShow} dots={true}>
           {partners.map((partner, index) => (

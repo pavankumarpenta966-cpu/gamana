@@ -8,11 +8,20 @@ import { Causes } from "../utils/Helper";
 import { useBreakpoints } from "../utils/Helper";
 import PartnershipPage from "../pages/PartnershipPage";
 import Testimonials from "../pages/Testimonials";
-import { FaChild, FaBookOpen, FaUserFriends, FaTint, FaUsers, FaChartLine } from "react-icons/fa";
-
-
+import {
+  FaChild,
+  FaBookOpen,
+  FaUserFriends,
+  FaTint,
+  FaUsers,
+  FaChartLine,
+} from "react-icons/fa";
+import { DonateButton } from "./Header";
+import { useNavigate } from "react-router-dom";
+import { BottomBorder } from "../sections/Footer";
 export default function HomePage() {
   const { lg, md, sm, xs } = useBreakpoints();
+  const navigate = useNavigate();
   const slidesToShow = xs ? 1 : sm ? 2 : md ? 2 : lg ? 3 : 3;
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -27,36 +36,36 @@ export default function HomePage() {
     },
   };
 
-   const programs = [
+  const programs = [
     {
       num: "01",
       title: "Child Protection and Child Marriage Prevention",
-      icon: <FaChild  />,
+      icon: <FaChild />,
     },
     {
       num: "02",
       title: "Education and Learning Continuity",
-      icon: <FaBookOpen  />,
+      icon: <FaBookOpen />,
     },
     {
       num: "03",
       title: "Adolescent Empowerment and Life Skills",
-      icon: <FaUserFriends  />,
+      icon: <FaUserFriends />,
     },
     {
       num: "04",
       title: "Menstrual Health and Hygiene (MHH) Education",
-      icon: <FaTint  />,
+      icon: <FaTint />,
     },
     {
       num: "05",
       title: "Community Mobilisation and Governance",
-      icon: <FaUsers  />,
+      icon: <FaUsers />,
     },
     {
       num: "06",
       title: "Monitoring, Evaluation & Data Systems",
-      icon: <FaChartLine  />,
+      icon: <FaChartLine />,
     },
   ];
 
@@ -78,28 +87,26 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="text-white max-w-2xl"
             >
-              <p className="text-emerald-400 mb-4 text-lg">
+              <p className="text-stealOrange mb-4 text-lg">
                 HELPING EACH OTHER
               </p>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
                 Let's Make Move and Do Great Thing for Each
               </h1>
-              <p className="text-xl mb-8 text-gray-200">
-                Luctus feugiat eget tristique gravida cursus mollis.
-                Pellentesque ornare amet, vel nulla id integer
+              <p className="text-base mb-8 text-gray-200  border-l-4 border-stealOrange px-2">
+                preventing early child marriages, ensuring access to quality
+                education, enhancing adolescent health and menstrual hygiene and
+                strengthening family.
               </p>
-              <CustomButton className="bg-emerald-600 text-white px-8 py-3 rounded-lg flex items-center gap-2 hover:bg-emerald-700 transition">
-                DISCOVER MORE
-              </CustomButton>
+              <DonateButton />
             </motion.div>
           </div>
-          <div className="absolute w-3/4 mx-auto bottom-9 left-1/2 -translate-x-1/2 cursor-pointer"
-          >
+          <div className="absolute w-3/4 mx-auto bottom-9 left-1/2 -translate-x-1/2 cursor-pointer">
             <InfoCount />
           </div>
         </section>
 
-        <section className="w-3/4 mx-auto bg-gray-50">
+        <section className="md:w-3/4 mx-auto  bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <motion.div
@@ -135,12 +142,13 @@ export default function HomePage() {
                 <p className="text-emerald-600 mb-3 font-semibold text-sm">
                   About Us
                 </p>
-                <h2 className="text-4xl font-bold mb-6 text-gray-900 leading-tight">
+                <h2 className="text-4xl font-bold mb-4 text-gray-900 leading-tight">
                   Only by Helping Each Other
                   <br />
                   We Can Make World Better
                 </h2>
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <BottomBorder className="mr-auto mb-2" />
+                <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   GAMANA (meaning "The Village Wing") is a volunteer non-profit
                   organization rooted in the Amaravati region of Andhra Pradesh,
                   India. Founded in 2007, GAMANA is dedicated to promoting child
@@ -151,42 +159,28 @@ export default function HomePage() {
                   encouraged to voice their rights and shape their future.
                 </p>
                 <ul className="space-y-3 mb-8">
-                  <li className="flex items-start gap-3">
-                    <div className="bg-emerald-600 p-1.5 rounded-full mt-1 flex-shrink-0">
-                      <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    </div>
-                    <span className="text-gray-700">
-                      Dignissim sodales ut eu sem integer vitae justo
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="bg-emerald-600 p-1.5 rounded-full mt-1 flex-shrink-0">
-                      <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    </div>
-                    <span className="text-gray-700">
-                      Lectus vestibulum mattis ullamcorper
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="bg-emerald-600 p-1.5 rounded-full mt-1 flex-shrink-0">
-                      <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    </div>
-                    <span className="text-gray-700">
-                      Neque laoreet suspendisse interdum congue porttitor
-                    </span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="bg-emerald-600 p-1.5 rounded-full mt-1 flex-shrink-0">
-                      <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    </div>
-                    <span className="text-gray-700">
-                      Faucibus a pellentesque sit amet porttitor
-                    </span>
-                  </li>
+                  {[
+                    "🌍 Individuals Reached",
+                    "👧👦 Empowered Adolescents",
+                    "💍 Child Marriages Prevented",
+                    "🎓 Out-of-School Children Mainstreamed",
+                    "💧 Girls Educated on Menstrual Health",
+                    "🩺 ASHA & Anganwadi Workers Trained",
+                  ]?.map((item, index) => (
+                    <li className="text-gray-600 text-sm" key={index}>
+                      {item}
+                    </li>
+                  ))}
+                  
                 </ul>
-                <button className="bg-emerald-600 text-white px-8 py-3 rounded font-semibold hover:bg-emerald-800 transition">
+                <CustomButton
+                  handleClick={() => {
+                    navigate("/about");
+                  }}
+                  className="bg-emerald-600 text-white px-8 py-3 rounded font-semibold hover:bg-emerald-800 transition"
+                >
                   About More
-                </button>
+                </CustomButton>
               </motion.div>
             </div>
           </div>
@@ -210,7 +204,7 @@ export default function HomePage() {
                 Donating Little
               </h2>
 
-              <div className="w-16 h-1 bg-emerald-600 mx-auto mt-4"></div>
+              <BottomBorder className="mx-auto my-3" />
             </div>
           </motion.div>
           {/* Carousel Container */}
@@ -252,12 +246,18 @@ export default function HomePage() {
                           <h3 className="text-xl font-bold text-gray-900 mb-4">
                             {cause.title}
                           </h3>
-                          <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                          <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-6">
                             {cause.description}
                           </p>
-                          <button className="w-full bg-emerald-700 text-white py-3 rounded font-semibold hover:bg-emerald-800 transition-colors">
+                          <CustomButton
+                            handleClick={() =>
+                              navigate(
+                                index === 3 ? "/target-area" : "/vision&mission"
+                              )
+                            }
+                          >
                             View More
-                          </button>
+                          </CustomButton>
                         </div>
                       </motion.div>
                     </div>
@@ -277,7 +277,7 @@ export default function HomePage() {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <section className="w-3/4 mx-auto bg-opacity-80 rounded-lg p-8">
+          <section className="md:w-3/4 mx-auto  bg-opacity-80 rounded-lg p-8">
             <div className="grid md:grid-cols-3 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -60 }}
@@ -288,16 +288,22 @@ export default function HomePage() {
                   Programs & Activities
                 </p>
                 <h2 className="text-2xl font-bold mb-2 text-gray-900">
-                  GAMANA’s Journey to Build Safe, Educated and Empowered Children
+                  GAMANA’s Journey to Build Safe, Educated and Empowered
+                  Children
                 </h2>
-                <div className="h-1 w-20 bg-emerald-700 mb-2"></div>
+                <BottomBorder className="my-2" />
                 <p className="text-gray-600 mb-3 leading-relaxed">
                   GAMANA (meaning "The Way") is a voluntary, non-profit
                   organization rooted in the Amaravati region of Andhra Pradesh,
                   India. Founded in 2007, GAMANA is dedicated to promoting child
                   rights, gender equality..
                 </p>
-                <CustomButton className="bg-emerald-700 text-white px-8 py-3 rounded hover:bg-emerald-800 transition font-semibold">
+                <CustomButton
+                  handleClick={() => {
+                    navigate("/programs&activity");
+                  }}
+                  className="bg-emerald-700 text-white px-8 py-3 rounded hover:bg-emerald-800 transition font-semibold"
+                >
                   View More
                 </CustomButton>
               </motion.div>
@@ -317,23 +323,26 @@ export default function HomePage() {
                 className="relative"
               >
                 <div className="">
-              {programs.map((item) => (
-                <div key={item.num} className="flex items-center gap-4 mt-6 first:mt-0">
-                  <div className="flex-shrink-0 w-10 h-10 bg-forest text-white rounded-full flex items-center justify-center font-bold text-md shadow-md">
-                    {item.icon}
-                  </div>
-                  <div className="flex text-sm items-center gap-3 font-semibold text-gray-800 ">
-                      {item.title}
-                  </div>
+                  {programs.map((item) => (
+                    <div
+                      key={item.num}
+                      className="flex items-center gap-4 mt-6 first:mt-0"
+                    >
+                      <div className="flex-shrink-0 w-10 h-10 bg-forest text-white rounded-full flex items-center justify-center font-bold text-md shadow-md">
+                        {item.icon}
+                      </div>
+                      <div className="flex text-sm items-center gap-3 font-semibold text-gray-800 ">
+                        {item.title}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
               </motion.div>
             </div>
           </section>
         </div>
 
-        <section className="w-3/4 mx-auto bg-white">
+        <section className="md:w-3/4 mx-auto  bg-white">
           <PartnershipPage />
         </section>
 

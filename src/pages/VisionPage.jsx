@@ -171,7 +171,7 @@ const VisionPage = () => {
           </div>
 
           {/* Bottom Image */}
-          <motion.div
+          {/* <motion.div
             {...fadeInUp}
             className="relative rounded-2xl overflow-hidden shadow-2xl group"
           >
@@ -197,12 +197,12 @@ const VisionPage = () => {
                 </p>
               </motion.div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-green-600 to-green-700">
+      {/* <section className="py-16 bg-gradient-to-r from-green-600 to-green-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
@@ -229,10 +229,10 @@ const VisionPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Section */}
-      <section className="py-16 md:py-20 bg-gray-50">
+      {/* <section className="py-16 md:py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             {...fadeInUp}
@@ -253,7 +253,7 @@ const VisionPage = () => {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
     </div>
     </MainLayout>
   );

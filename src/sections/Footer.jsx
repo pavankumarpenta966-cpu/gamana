@@ -5,11 +5,19 @@ import { motion } from "framer-motion";
 import CustomButton from "../components/CustomButton";
 import { Divider } from "@heroui/react";
 import SocialIcons from "../components/SocialIcons";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
+import { FaPhoneAlt } from "react-icons/fa";
+import { phoneNumber, email } from "../utils/Helper";
+import { HiMail} from "react-icons/hi";
+import { FaLocationDot } from "react-icons/fa6";
+import { DonateButton } from "./Header";
 export const OrgLogo = () => {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   return (
-    <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}>
+    <div
+      className="flex items-center gap-2 cursor-pointer"
+      onClick={() => navigate("/")}
+    >
       <img src="/gamana/192.png" alt="Gamana" className="w-10 h-10" />
       <div className="flex flex-col">
         <span className="h-text capitalize">GAMANA</span>
@@ -17,6 +25,9 @@ export const OrgLogo = () => {
       </div>
     </div>
   );
+};
+export const BottomBorder = ({ className }) => {
+  return <div className={`w-16 h-1 bg-emerald-600 ${className}`}></div>;
 };
 export default function Footer() {
   return (
@@ -52,7 +63,7 @@ export default function Footer() {
               >
                 Be Volunteer
               </CustomButton>
-              <CustomButton className="rounded">Donate Now</CustomButton>
+              <DonateButton />
             </div>
           </motion.div>
         </div>
@@ -73,15 +84,41 @@ export default function Footer() {
                 <ul className="space-y-2">
                   {section.links.map((link, j) => (
                     <li key={j}>
-                      <a href={link.href} className="sub-para flex item-center">
+                      <Link to={link.href} className="sub-para flex item-center hover:text-forest hover:font-bold hover:underline hover:transition-colors">
                         <MdOutlineKeyboardArrowRight className="invisible group-hover:visible" />
                         {link.label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
+            <div>
+              <h4 className="nav-list !text-lg mb-3">Contacts Info</h4>
+              <ul className="space-y-2">
+                <li className="sub-para flex item-center">
+                  <div className="flex  gap-2">
+                       <span className="bg-forest text-white rounded-full p-2"><FaPhoneAlt className="w-3 h-3" /></span>
+                    <a href={`tel:+91${phoneNumber}`} className="my-auto">{phoneNumber}</a>
+                  </div>
+                </li>
+                <li className="sub-para flex item-center">
+                  <div className="flex  gap-2">
+                    <span className="bg-forest text-white rounded-full p-2"><HiMail className="w-3 h-3" /></span>
+                    <a href={`tel:+91${phoneNumber}`} className="my-auto">{email}</a>
+                  </div>
+                </li>
+                <li className="sub-para flex item-center">
+                  <div className="flex gap-2">
+                    <span className="bg-forest text-white rounded-full p-2 h-7"><FaLocationDot className="w-3 h-3" /></span>
+                    <p className="my-auto">GAMANA (The Way)
+2-76, Ananthavaram Village,
+Thullur Mandal,
+Guntur District, Andhra Pradesh – 522 236, India</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="bg-forest text-white text-center py-2">
