@@ -29,10 +29,10 @@ export default function PartnershipPage() {
           <span className="text-green-700 font-semibold text-sm uppercase tracking-wide">
             Partnership
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
+          <h2 className="text-xl md:text-4xl font-bold text-gray-800 mt-2">
             Become Support Partner
           </h2>
-          <BottomBorder className="my-3" />
+        <div className="w-24 h-1 bg-forest mt-4"></div>
         </motion.div>
         <CustomScroll slidesToShow={slidesToShow} dots={true}>
           {partners.map((partner, index) => (

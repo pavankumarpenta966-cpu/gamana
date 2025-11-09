@@ -219,12 +219,12 @@ export default function Header() {
                           >
                             {item.submenu.map((subItem) => (
                               <div key={subItem.name}>
-                                <a
-                                  href={subItem.path}
+                                <Link
+                                  to={subItem.path}
                                   className="block py-2 text-sm text-gray-600 hover:text-forest transition"
                                 >
                                   {subItem.name}
-                                </a>
+                                </Link>
                                 {subItem.nested && (
                                   <div className="pl-4">
                                     {subItem.nested.map((nestedItem) => (

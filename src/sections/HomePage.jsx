@@ -90,10 +90,10 @@ export default function HomePage() {
               <p className="text-stealOrange mb-4 text-lg">
                 HELPING EACH OTHER
               </p>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-3xl md:text-6xl font-bold mb-6 leading-tight">
                 Let's Make Move and Do Great Thing for Each
               </h1>
-              <p className="text-base mb-8 text-gray-200  border-l-4 border-stealOrange px-2">
+              <p className="text-sm md:text-base mb-8 text-gray-200  border-l-4 border-stealOrange px-2">
                 preventing early child marriages, ensuring access to quality
                 education, enhancing adolescent health and menstrual hygiene and
                 strengthening family.
@@ -116,20 +116,12 @@ export default function HomePage() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="relative flex items-start">
-                  {/* First image (base image) */}
                   <img
                     src="/gamana/About1.svg"
                     alt="Community gathering"
                     className="rounded-lg shadow-lg  object-cover"
                   />
 
-                  {/* Second image (overlayed, right aligned) */}
-
-                  <img
-                    src="/gamana/About2.svg"
-                    alt="Group discussion"
-                    className="rounded-lg shadow-lg w-64 object-cover absolute -bottom-8 -right-8 "
-                  />
                 </div>
               </motion.div>
 
@@ -142,7 +134,7 @@ export default function HomePage() {
                 <p className="text-emerald-600 mb-3 font-semibold text-sm">
                   About Us
                 </p>
-                <h2 className="text-4xl font-bold mb-4 text-gray-900 leading-tight">
+                <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4 text-gray-900 leading-tight">
                   Only by Helping Each Other
                   <br />
                   We Can Make World Better
@@ -184,10 +176,9 @@ export default function HomePage() {
               </motion.div>
             </div>
           </div>
-        </section>
+        </section>  
 
         <section className="lg:w-3/4 w-full mx-auto bg-white">
-          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -198,7 +189,7 @@ export default function HomePage() {
               <p className="text-emerald-600 text-sm font-semibold tracking-wide mb-3">
                 Causes
               </p>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+              <h2 className="text-xl md:text-4xl font-bold text-gray-900">
                 You Can Help Lots of People by
                 <br />
                 Donating Little
@@ -207,10 +198,7 @@ export default function HomePage() {
               <BottomBorder className="mx-auto my-3" />
             </div>
           </motion.div>
-          {/* Carousel Container */}
-
-          <div className="relative">
-            {/* Cards Container */}
+          <div className="mb-3">
             <motion.div
               variants={staggerContainer}
               initial="initial"
@@ -268,8 +256,8 @@ export default function HomePage() {
           </div>
         </section>
 
-        <div
-          className="shadow-lg py-16 px-8 rounded-lg"
+         <div
+          className="shadow-lg md:py-16 md:px-8 rounded-lg"
           style={{
             backgroundImage: ` url("/gamana/bgPrograms.svg")`,
             backgroundSize: "cover",
@@ -284,7 +272,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <p className="text-emerald-700 font-semibold mb-3">
+                <p className="text-forest font-semibold mb-3">
                   Programs & Activities
                 </p>
                 <h2 className="text-2xl font-bold mb-2 text-gray-900">
@@ -340,11 +328,9 @@ export default function HomePage() {
               </motion.div>
             </div>
           </section>
-        </div>
+        </div> 
 
-        <section className="md:w-3/4 mx-auto  bg-white">
           <PartnershipPage />
-        </section>
 
         {/* <section className="w-3/4 mx-auto bg-gray-70">
           <Testimonials />
