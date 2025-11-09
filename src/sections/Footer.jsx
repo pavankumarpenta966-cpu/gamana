@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import CustomButton from "../components/CustomButton";
 import { Divider } from "@heroui/react";
 import SocialIcons from "../components/SocialIcons";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { FaPhoneAlt } from "react-icons/fa";
 import { phoneNumber, email } from "../utils/Helper";
-import { HiMail} from "react-icons/hi";
+import { HiMail } from "react-icons/hi";
 import { FaLocationDot } from "react-icons/fa6";
 import { DonateButton } from "./Header";
 export const OrgLogo = () => {
@@ -84,7 +84,10 @@ export default function Footer() {
                 <ul className="space-y-2">
                   {section.links.map((link, j) => (
                     <li key={j}>
-                      <Link to={link.href} className="sub-para flex item-center hover:text-forest hover:font-bold hover:underline hover:transition-colors">
+                      <Link
+                        to={link.href}
+                        className="sub-para flex item-center hover:text-forest hover:font-bold hover:underline hover:transition-colors"
+                      >
                         <MdOutlineKeyboardArrowRight className="invisible group-hover:visible" />
                         {link.label}
                       </Link>
@@ -98,23 +101,33 @@ export default function Footer() {
               <ul className="space-y-2">
                 <li className="sub-para flex item-center">
                   <div className="flex  gap-2">
-                       <span className="bg-forest text-white rounded-full p-2"><FaPhoneAlt className="w-3 h-3" /></span>
-                    <a href={`tel:+91${phoneNumber}`} className="my-auto">{phoneNumber}</a>
+                    <span className="bg-forest text-white rounded-full p-2">
+                      <FaPhoneAlt className="w-3 h-3" />
+                    </span>
+                    <a href={`tel:+91${phoneNumber}`} className="my-auto">
+                      {phoneNumber}
+                    </a>
                   </div>
                 </li>
                 <li className="sub-para flex item-center">
                   <div className="flex  gap-2">
-                    <span className="bg-forest text-white rounded-full p-2"><HiMail className="w-3 h-3" /></span>
-                    <a href={`tel:+91${phoneNumber}`} className="my-auto">{email}</a>
+                    <span className="bg-forest text-white rounded-full p-2">
+                      <HiMail className="w-3 h-3" />
+                    </span>
+                    <a href={`tel:+91${phoneNumber}`} className="my-auto">
+                      {email}
+                    </a>
                   </div>
                 </li>
                 <li className="sub-para flex item-center">
                   <div className="flex gap-2">
-                    <span className="bg-forest text-white rounded-full p-2 h-7"><FaLocationDot className="w-3 h-3" /></span>
-                    <p className="my-auto">GAMANA (The Way)
-2-76, Ananthavaram Village,
-Thullur Mandal,
-Guntur District, Andhra Pradesh – 522 236, India</p>
+                    <span className="bg-forest text-white rounded-full p-2 h-7">
+                      <FaLocationDot className="w-3 h-3" />
+                    </span>
+                    <p className="my-auto">
+                      GAMANA (The Way) 2-76, Ananthavaram Village, Thullur
+                      Mandal, Guntur District, Andhra Pradesh – 522 236, India
+                    </p>
                   </div>
                 </li>
               </ul>

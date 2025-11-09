@@ -10,11 +10,12 @@ import CustomButton from "../components/CustomButton";
 import { ApiBaseUrl } from "../utils/Helper";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useBreakpoints } from "../utils/Helper";
 // Inside your component, add at the top:
 export const DonateButton = () => {
   const navigate = useNavigate();
   return(
-     <CustomButton className="hidden md:block rounded" handleClick={() => {
+     <CustomButton className="rounded" handleClick={() => {
             navigate("/donate")
           }}>
             Donate Now
@@ -25,7 +26,7 @@ export const DonateButton = () => {
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
-
+  const { lg } = useBreakpoints();
   const navigationItems = [
     { name: "HOME", path: "/", hasSubmenu: false },
     {
@@ -69,9 +70,7 @@ export default function Header() {
             <div className="flex items-center gap-6">
               <p className="flex items-center gap-1.5 text-sm">
                 <FaPhoneAlt className="w-3 h-3" />
-                <a href={`tel:+91${phoneNumber}`}>{phoneNumber}</a>
-
-                
+                <a href={`tel:+91${phoneNumber}`}>{phoneNumber}</a>                
               </p>
               <span className="flex items-center gap-1.5 text-sm">
                 <HiMail className="w-4 h-4 text-white" />
@@ -156,7 +155,7 @@ export default function Header() {
             ))}
           </div>
 
-          <DonateButton/>
+          {!lg && <DonateButton/>}
 
           {/* Mobile Menu Button */}
           <button
