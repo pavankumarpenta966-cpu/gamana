@@ -36,7 +36,7 @@ export default function PartnershipPage() {
         </motion.div>
         <CustomScroll slidesToShow={slidesToShow} dots={true}>
           {partners.map((partner, index) => (
-            <div key={index} className="px-4 flex items-center justify-center border border-forest">
+            <div key={index} className="px-4 flex items-center justify-center border border-gray-200">
               <Image src={`${partner.logo}p${index+1}.png`} alt={index} width={"80%"} height={"15vh"} className="mx-auto"/>
               {/* <h3 className="text-sm font-medium text-forest leading-5 tracking-normal text-center">
                 {partner.name}

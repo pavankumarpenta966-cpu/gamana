@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import {
@@ -7,36 +7,13 @@ import {
   FaHome,
   FaDonate,
 } from "react-icons/fa";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import MainLayout from "../pages/MainLayout";
 import InfoCount from "../sections/InfoCount";
 import PartnershipPage from "./PartnershipPage";
 import PageHeader from "../sections/PageHeader";
-
+import { BottomBorder } from "../sections/Footer";
+import { DonateButton } from "../sections/Header";
 const AboutUsPage = () => {
- 
-
-  // Counter animation
-  useEffect(() => {
-    const duration = 2000;
-    const steps = 60;
-    const interval = duration / steps;
-
-
-
-    let step = 0;
-    const timer = setInterval(() => {
-      step++;
-   
-
-      if (step >= steps) clearInterval(timer);
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, []);
-
   const features = [
     {
       icon: <FaGraduationCap className="text-4xl" />,
@@ -94,12 +71,7 @@ const AboutUsPage = () => {
                     alt="Person"
                     className="w-16 h-16 rounded-full"
                   />
-                </div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <h2 className="text-6xl md:text-8xl font-bold text-gray-800">
-                    ABOUT US
-                  </h2>
-                </div>
+                </div>               
               </div>
               <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-green-700 rounded-full opacity-20"></div>
             </motion.div>
@@ -120,7 +92,7 @@ const AboutUsPage = () => {
                   <br />
                   Helping Tommorow
                 </h2>
-                 <div className="w-24 h-1 bg-forest mt-4"></div>
+                 <BottomBorder className="my-2" />
               </div>
 
               <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
@@ -171,13 +143,7 @@ const AboutUsPage = () => {
                 </div>
               </div>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-8 bg-green-700 text-white px-8 py-3 rounded-md font-semibold hover:bg-green-800 transition-colors"
-              >
-                Donate Now
-              </motion.button>
+              <DonateButton />
             </motion.div>
           </div>
         </div>
@@ -199,6 +165,17 @@ const AboutUsPage = () => {
             </h3>
           </div>
         </motion.div>
+        {/* Statistics Counter */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-4"
+          >
+            <div className=" my-4 cursor-pointer">
+              <InfoCount />
+            </div>
+          </motion.div>
 
         {/* What Makes Us Different */}
         <div
@@ -223,7 +200,7 @@ const AboutUsPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
                 What Make Us Different
               </h2>
-              <div className="w-24 h-1 bg-yellow-400 mx-auto mt-4"></div>
+                     <BottomBorder className="my-2 mx-auto" />
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -248,17 +225,9 @@ const AboutUsPage = () => {
               ))}
             </div>
           </div>
-          {/* Statistics Counter */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <div className="absolute w-3/4 mx-auto -bottom-0 left-1/2 -translate-x-1/2  cursor-pointer">
-              <InfoCount />
-            </div>
-          </motion.div>
+         
         </div>
+         
 
         {/* Partnership Section */}
         <PartnershipPage />

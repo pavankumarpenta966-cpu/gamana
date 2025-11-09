@@ -27,7 +27,7 @@ export const OrgLogo = () => {
   );
 };
 export const BottomBorder = ({ className }) => {
-  return <div className={`w-16 h-1 bg-emerald-600 ${className}`}></div>;
+  return <div className={`w-20 h-1 bg-emerald-600 ${className}`}></div>;
 };
 export default function Footer() {
   return (

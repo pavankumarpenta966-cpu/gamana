@@ -13,6 +13,7 @@ import ProgramsActivityPage from "./pages/ProgramsActivityPage";
 import ScrollToTop from "./components/ScrollToTop";
 import OurApproachPage from "./pages/OurApproachPage";
 import Donate from "./pages/Donate";
+import Team from "./pages/Team";
 function App() {
   return (
     <HeroUIProvider>
@@ -29,6 +30,7 @@ function App() {
         <Route path="/programs&activity" element={<ProgramsActivityPage />} />
       <Route path="/our-approach" element={<OurApproachPage />} />
       <Route path="/donate" element={<Donate />} />
+      <Route path="/team" element={<Team />} />
       </Routes>
     </HeroUIProvider>
   );

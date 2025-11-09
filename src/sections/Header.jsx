@@ -40,6 +40,7 @@ export default function Header() {
         },
         { name: "Target Area", path: `/target-area` },
         { name: "Governance", path: `/governance` },
+        { name: "Team", path: `/team` },
       ],
     },
     {
