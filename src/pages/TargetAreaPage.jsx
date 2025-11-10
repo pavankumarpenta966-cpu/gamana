@@ -38,7 +38,7 @@ export default function TargetAreaPage() {
               <h2 className="text-2xl font-bold mb-2 text-gray-900">Target  Area</h2>
               <BottomBorder className="my-2" />
               <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                GAMANA’s programs are implemented across 24 villages in the
+                GAMANA’s programs are implemented across 40 villages in the
                 Thullur, Mangalagiri and Tadepalli Mandals of Guntur District,
                 Andhra Pradesh, India. These villages form part of the Amaravati
                 Capital Region, an area undergoing rapid socio-economic

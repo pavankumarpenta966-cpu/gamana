@@ -16,8 +16,8 @@ export default defineConfig({
         'robots.txt',
       ],
       manifest: {
-        name: 'Gamana',
-        short_name: 'Gamana',
+        name: 'GAMANA',
+        short_name: 'GAMANA',
         description: 'A React app built with Vite and PWA support',
         theme_color: '#ffffff',
         icons: [

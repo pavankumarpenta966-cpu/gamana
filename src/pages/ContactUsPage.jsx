@@ -160,7 +160,7 @@ const ContactPage = () => {
                       <div className="text-gray-700">
                         <p className="font-medium mb-1">GAMANA (The Way)</p>
                         <p className="text-sm leading-relaxed">
-                          2-78, Ananthavaram Village,
+                          2-78. Ananthavaram Village,
                           <br />
                           Thullur Mandal,
                           <br />
@@ -264,7 +264,7 @@ const ContactPage = () => {
           className="h-[400px] md:h-[500px] bg-gray-100"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3826.5934746555395!2d80.56789131487398!3d16.45077938863513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a35f0a2a7d81943%3A0x8ba5d78f376e0e88!2sAnanthavaram%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1635789456789!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15301.117888910825!2d80.41659593582156!3d16.51198269275152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3592a3ac42c96f%3A0x7095152b3e7b4417!2sGAMANA!5e0!3m2!1sen!2sin!4v1762800069307!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ border: 0 }}
@@ -272,7 +272,8 @@ const ContactPage = () => {
             loading="lazy"
             title="GAMANA Location"
             className="grayscale hover:grayscale-0 transition-all duration-500"
-          ></iframe>
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>         
         </motion.section>
 
         {/* Info Cards Section */}

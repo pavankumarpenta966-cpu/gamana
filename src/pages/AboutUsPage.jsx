@@ -13,27 +13,28 @@ import PartnershipPage from "./PartnershipPage";
 import PageHeader from "../sections/PageHeader";
 import { BottomBorder } from "../sections/Footer";
 import { DonateButton } from "../sections/Header";
+import { RiTeamLine } from "react-icons/ri";
 const AboutUsPage = () => {
   const features = [
     {
       icon: <FaGraduationCap className="text-4xl" />,
-      title: "We Educate",
-      description: "We want to provide you quality content and news.",
+      title: "Innovative learning mode",
+      description: "Our training and awareness programs nurture critical thinking and social responsibility.",
     },
     {
       icon: <FaHandsHelping className="text-4xl" />,
-      title: "We Help",
-      description: "Missing children, absolute free work for people.",
+      title: "Local to global linkages",
+      description: "We connect grassroots experiences with national and international advocacy.",
     },
     {
-      icon: <FaHome className="text-4xl" />,
-      title: "We Build",
-      description: "Famigliare and occasional programs around world.",
+      icon: <RiTeamLine className="text-4xl" />,
+      title: "Integrated partnerships",
+      description: "We collaborate with schools, government and civil society for lasting systemic change.",
     },
     {
       icon: <FaDonate className="text-4xl" />,
-      title: "We Donate",
-      description: "Various ideas on conventional system, financial product.",
+      title: "Transparency & accountability",
+      description: "Every partnership and project is managed with honesty and measurable results.",
     },
   ];
 
@@ -217,10 +218,10 @@ const AboutUsPage = () => {
                   <div className="bg-green-700 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                     {feature.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  <h3 className="text-base font-bold text-gray-800 mb-2 capitalize">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                  <p className="text-gray-600 text-xs">{feature.description}</p>
                 </motion.div>
               ))}
             </div>

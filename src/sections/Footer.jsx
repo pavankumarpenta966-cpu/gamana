@@ -1,4 +1,3 @@
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Info, FooterLinks } from "../utils/Helper";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
@@ -39,7 +38,7 @@ export default function Footer() {
             'linear-gradient(rgba(20, 20, 20, 0.5), rgba(57, 57, 57, 0.5)), url("/gamana/overlay.svg")',
         }}
       >
-        <div className="container mx-auto px-4 text-center">
+        <div className="px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -47,14 +46,13 @@ export default function Footer() {
             className="text-white md:flex justify-around md:w-4/5 mx-auto"
           >
             <div className="text-start">
-              <p className="mb-2 font-semibold text-[20px] leading-[26px] tracking-[0]">
-                Do Good
+              <p className="mb-2 font-bold text-2xl tracking-normal leading-relaxed capitalize">
+              Together we change mindsets, together we change lives.
               </p>
-              <p className="text-2xl md:text-4xl font-bold">
-                Join Our Mission to Improve
+              <p className="text-sm md:text-base font-semibold tracking-normal leading-relaxed mb-2">
+                Inspires collective community action the heart of GAMANA’s work.
               </p>
-              <p className="text-2xl md:text-4xl font-bold">the World</p>
-              <Divider className="w-1/3 bg-white mt-2 mb-8" />
+              <Divider className="w-1/4 bg-white mt-3 mb-4" />
             </div>
             <div className="flex md:justify-center gap-4 flex-wrap my-auto">
               <CustomButton
@@ -86,9 +84,8 @@ export default function Footer() {
                     <li key={j}>
                       <Link
                         to={link.href}
-                        className="sub-para flex item-center hover:text-forest hover:font-bold hover:underline hover:transition-colors"
+                        className="sub-para flex item-center align-middle hover:text-forest hover:font-bold hover:underline hover:transition-colors"
                       >
-                        <MdOutlineKeyboardArrowRight className="invisible group-hover:visible" />
                         {link.label}
                       </Link>
                     </li>
@@ -125,7 +122,7 @@ export default function Footer() {
                       <FaLocationDot className="w-3 h-3" />
                     </span>
                     <p className="my-auto">
-                      GAMANA (The Way) 2-76, Ananthavaram Village, Thullur
+                      GAMANA (The Way) 2-76. Ananthavaram Village, Thullur
                       Mandal, Guntur District, Andhra Pradesh – 522 236, India
                     </p>
                   </div>
@@ -135,7 +132,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="bg-forest text-white text-center py-2">
-          <p>&copy; 2025 Gamana. All Rights Reserved.</p>
+          <p>&copy; 2025 GAMANA. All Rights Reserved.</p>
         </div>
       </footer>
     </>

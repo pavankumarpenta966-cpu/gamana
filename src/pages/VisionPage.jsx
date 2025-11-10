@@ -7,6 +7,7 @@ import PageHeader from "../sections/PageHeader";
 import InfoCount from "../sections/InfoCount";
 import { Image } from "@heroui/react";
 import { BottomBorder } from "../sections/Footer";
+import { GoDotFill } from "react-icons/go";
 const fadeInUp = {
   initial: { opacity: 0, y: 60 },
   whileInView: { opacity: 1, y: 0 },
@@ -150,14 +151,14 @@ const VisionPage = () => {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-3 bg-gray-50 p-4 rounded-lg hover:bg-green-50 transition-colors"
+                  className="flex items-start gap-3 bg-gray-50 p-2 rounded-lg hover:bg-green-50 transition-colors"
                 >
                   <div className="">
-                    <span className="inline-flex items-center justify-center w-6 h-6 bg-green-600 text-white rounded-full text-sm font-semibold group-hover:scale-110 transition-transform">
-                      {index + 1}
+                    <span className="inline-flex items-center justify-center w-4 h-4 bg-green-600 text-white rounded-full text-sm font-semibold group-hover:scale-110 transition-transform">
+                      <GoDotFill />
                     </span>
                   </div>
-                  <p className="text-gray-600 text-base leading-relaxed">{point}</p>
+                  <p className="text-gray-600 text-base leading-normal tracking-normal">{point}</p>
                 </motion.div>
               ))}
             </motion.div>

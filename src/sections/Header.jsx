@@ -14,14 +14,17 @@ import { useBreakpoints } from "../utils/Helper";
 // Inside your component, add at the top:
 export const DonateButton = () => {
   const navigate = useNavigate();
-  return(
-     <CustomButton className="rounded" handleClick={() => {
-            navigate("/donate")
-          }}>
-            Donate Now
-          </CustomButton>
-  )
-}
+  return (
+    <CustomButton
+      className="rounded"
+      handleClick={() => {
+        navigate("/donate");
+      }}
+    >
+      Donate Now
+    </CustomButton>
+  );
+};
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,6 +45,7 @@ export default function Header() {
         { name: "Target Area", path: `/target-area` },
         { name: "Governance", path: `/governance` },
         { name: "Team", path: `/team` },
+        { name: "Legal Status", path: `/legal-status` },
       ],
     },
     {
@@ -70,15 +74,15 @@ export default function Header() {
             <div className="flex items-center gap-6">
               <p className="flex items-center gap-1.5 text-sm">
                 <FaPhoneAlt className="w-3 h-3" />
-                <a href={`tel:+91${phoneNumber}`}>{phoneNumber}</a>                
+                <a href={`tel:+91${phoneNumber}`}>{phoneNumber}</a>
               </p>
               <span className="flex items-center gap-1.5 text-sm">
                 <HiMail className="w-4 h-4 text-white" />
-                <a href={`mailto:${email}?subject=Inquiry%20from%20Website&body=Hello%20GAMANA%20Team,`}>
-  {email}
-</a>
-
-                
+                <a
+                  href={`mailto:${email}?subject=Inquiry%20from%20Website&body=Hello%20GAMANA%20Team,`}
+                >
+                  {email}
+                </a>
               </span>
             </div>
             <div className="flex gap-4">
@@ -155,7 +159,7 @@ export default function Header() {
             ))}
           </div>
 
-          {!lg && <DonateButton/>}
+          {!lg && <DonateButton />}
 
           {/* Mobile Menu Button */}
           <button
@@ -254,7 +258,7 @@ export default function Header() {
                 </div>
               ))}
 
-             <DonateButton />
+              <DonateButton />
             </div>
           </motion.div>
         )}

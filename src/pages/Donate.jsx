@@ -1,7 +1,7 @@
 import React from "react";
 import MainLayout from "./MainLayout";
 import PageHeader from "../sections/PageHeader";
-
+import { Image } from "@heroui/react";
 export default function Donate() {
   return (
     <MainLayout>
@@ -10,11 +10,13 @@ export default function Donate() {
         bgImage="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200"
         breadcrumb={[{ name: "Home", path: "/" }, { name: "Donate" }]}
       />
-      <div className="md:w-3/4 mx-auto m-5  shadow-lg rounded-lg"   
-          style={{
-            backgroundImage: `url("/gamana/donate.svg")`,
-          }}>
-        <div className="p-5">
+      <div
+        className="md:w-3/4 mx-auto m-5  shadow-lg rounded-lg"
+        style={{
+          backgroundImage: `url("/gamana/donate.svg")`,
+        }}
+      >
+        {/* <div className="p-5">
           <h2 className="text-2xl font-bold mb-6 text-forest">
             Support Our Cause
           </h2>
@@ -23,16 +25,15 @@ export default function Donate() {
             positive impact in the community. Every contribution, big or small,
             makes a difference.
           </p>
-        </div>
+        </div> */}
 
         <div className="grid md:grid-cols-2 gap-8 p-5">
           {/* Left Column - Bank Details */}
-          <div className=" justify-center p-6">
+          <div className="justify-center p-6">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Donation</h2>
             <p className="text-gray-600 mb-8">
               You can make quick donations to those in need
             </p>
-
             <div className="space-y-6">
               <div>
                 <span className="text-gray-700 font-medium">
@@ -66,22 +67,14 @@ export default function Donate() {
 
           {/* Right Column - QR Code */}
           <div className="flex items-center justify-center">
-            <div className=" p-6 text-center shadow-md rounded-lg bg-white ">
-              <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                Scan QR Code
-              </h3>
-              <div className="w-64 h-64 p-2 flex items-center justify-center">
-                <div className="w-full h-full bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center text-white rounded">
-                  <div className="text-center">
-                    <div className="text-4xl mb-2">📱</div>
-                    <p className="text-xs">QR Code</p>
-                  </div>
-                </div>
-              </div>
+            {/* <h3 className="text-xl font-semibold text-gray-800 mb-4">
+              Scan & Pay
+            </h3> */}
+            <div className="text-4xl mb-2 flex justify-center">
+              <Image src="/gamana/scanner.jpg" alt="qr code" height={400} />
             </div>
           </div>
-        </div>
-      </div>
+        </div>     </div>
     </MainLayout>
   );
 }

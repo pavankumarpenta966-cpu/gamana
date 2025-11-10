@@ -77,7 +77,7 @@ export default function HomePage() {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[90vh]"
             style={{
               backgroundImage:
-                'linear-gradient(rgba(95, 95, 95, 0.5), rgba(121, 117, 117, 0.5)), url("/gamana/hero.svg")',
+                'linear-gradient(rgba(0, 0, 0, 0.4), rgba(38, 38, 38, 0.6)), url("/gamana/approach.jpg")',
             }}
           />
           <div className="relative md:w-3/4 mx-auto px-4 h-full flex items-center">
@@ -85,18 +85,19 @@ export default function HomePage() {
               initial={{ opacity: 0, x: -60 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-white max-w-2xl"
+              className="text-white"
             >
-              <p className="text-stealOrange mb-4 text-lg">
-                HELPING EACH OTHER
-              </p>
-              <h1 className="text-3xl md:text-6xl font-bold mb-6 leading-tight">
-                Let's Make Move and Do Great Thing for Each
+              <h1 className="text-base md:text-3xl font-bold mb-6 leading-relaxed capitalize text-[#fafafa]">
+                At the heart of our work lies a simple yet powerful belief that
+                every child deserves to grow up in a safe, educated and
+                nurturing environment where equality, dignity and opportunity
+                are not privileges, but rights
               </h1>
-              <p className="text-sm md:text-base mb-8 text-gray-200  border-l-4 border-stealOrange px-2">
-                preventing early child marriages, ensuring access to quality
-                education, enhancing adolescent health and menstrual hygiene and
-                strengthening family.
+              <p className="text-xs md:text-base mb-8 text-gray-200 border-l-4 border-stealOrange px-2 leading-normal">
+                Over the years, GAMANA has focused on preventing early child
+                marriages, ensuring access to quality education, enhancing
+                adolescent health and menstrual hygiene and strengthening family
+                and community systems to protect every child
               </p>
               <DonateButton />
             </motion.div>
@@ -121,7 +122,6 @@ export default function HomePage() {
                     alt="Community gathering"
                     className="rounded-lg shadow-lg  object-cover"
                   />
-
                 </div>
               </motion.div>
 
@@ -163,7 +163,6 @@ export default function HomePage() {
                       {item}
                     </li>
                   ))}
-                  
                 </ul>
                 <CustomButton
                   handleClick={() => {
@@ -176,7 +175,7 @@ export default function HomePage() {
               </motion.div>
             </div>
           </div>
-        </section>  
+        </section>
 
         <section className="lg:w-3/4 w-full mx-auto bg-white">
           <motion.div
@@ -256,7 +255,7 @@ export default function HomePage() {
           </div>
         </section>
 
-         <div
+        <div
           className="shadow-lg md:py-16 md:px-8 rounded-lg"
           style={{
             backgroundImage: ` url("/gamana/bgPrograms.svg")`,
@@ -328,9 +327,9 @@ export default function HomePage() {
               </motion.div>
             </div>
           </section>
-        </div> 
+        </div>
 
-          <PartnershipPage />
+        <PartnershipPage />
 
         {/* <section className="w-3/4 mx-auto bg-gray-70">
           <Testimonials />

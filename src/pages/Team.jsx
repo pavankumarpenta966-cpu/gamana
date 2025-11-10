@@ -3,6 +3,7 @@ import PageHeader from "../sections/PageHeader";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
+import { Image } from "@heroui/react";
 export default function Team() {
   const fadeInRight = {
     initial: { opacity: 0, x: 60 },
@@ -115,6 +116,10 @@ export default function Team() {
               </motion.div>
             ))}
           </motion.div>
+      <div className="mt-4">
+        <h2 className="text-2xl font-bold mb-2 text-gray-900">Organogram</h2>
+        <Image src="/gamana/organogram.jpg" alt="organogram"/>
+      </div>
         </div>
       </section>
     </MainLayout>
