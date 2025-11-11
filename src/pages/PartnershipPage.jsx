@@ -14,6 +14,8 @@ export default function PartnershipPage() {
     { name: "NSDC", logo: "/gamana/" },
     { name: "NSDC", logo: "/gamana/" },
     { name: "NSDC", logo: "/gamana/" },
+    { name: "NSDC", logo: "/gamana/" },
+    { name: "NSDC", logo: "/gamana/" },
   ];
 
   return (
@@ -34,7 +36,7 @@ export default function PartnershipPage() {
           </h2>
         <div className="w-24 h-1 bg-forest mt-4"></div>
         </motion.div>
-        <CustomScroll slidesToShow={slidesToShow} dots={true}>
+        <CustomScroll slidesToShow={slidesToShow} dots={true} speed={500}>
           {partners.map((partner, index) => (
             <div key={index} className="px-4 flex items-center justify-center border border-gray-200">
               <Image src={`${partner.logo}p${index+1}.png`} alt={index} width={"80%"} height={"15vh"} className="mx-auto"/>

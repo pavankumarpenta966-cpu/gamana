@@ -32,13 +32,14 @@ export default function CustomScroll({
   arrows,
   nextArrow,
   prevArrow,
+  speed
 }) {
   var settings = {
     dots: dots ?? false,
     infinite: true,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
-    speed: 500,
+    speed: speed ?? 500,
     autoplay: true,
     arrows: arrows ?? false,
     ...(nextArrow ? { nextArrow: <NextArrow /> } : {}),

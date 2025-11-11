@@ -15,6 +15,7 @@ import {
   FaTint,
   FaUsers,
   FaChartLine,
+  FaGraduationCap,
 } from "react-icons/fa";
 import { DonateButton } from "./Header";
 import { useNavigate } from "react-router-dom";
@@ -141,23 +142,23 @@ export default function HomePage() {
                 </h2>
                 <BottomBorder className="mr-auto mb-2" />
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  GAMANA (meaning "The Village Wing") is a volunteer non-profit
-                  organization rooted in the Amaravati region of Andhra Pradesh,
-                  India. Founded in 2007, GAMANA is dedicated to promoting child
-                  rights, gender equality and community empowerment through
-                  participatory rights-based approaches. We believe that
-                  sustainable social change begins with informed and empowered
-                  communities, especially children and adolescents who are
-                  encouraged to voice their rights and shape their future.
+                  GAMANA is a volunteer non-profit organization rooted in the
+                  Amaravati region of Andhra Pradesh, India. Founded in 2007,
+                  GAMANA is dedicated to promoting child rights, gender equality
+                  and community empowerment through participatory rights-based
+                  approaches. We believe that sustainable social change begins
+                  with informed and empowered communities, especially children
+                  and adolescents who are encouraged to voice their rights and
+                  shape their future.
                 </p>
                 <ul className="space-y-3 mb-8">
                   {[
-                    "🌍 Individuals Reached",
-                    "👧👦 Empowered Adolescents",
-                    "💍 Child Marriages Prevented",
-                    "🎓 Out-of-School Children Mainstreamed",
-                    "💧 Girls Educated on Menstrual Health",
-                    "🩺 ASHA & Anganwadi Workers Trained",
+                    "🌍 Individuals Reached (2,428+)",
+                    "👧👦 Empowered Adolescents (1,446)",
+                    "💍 Child Marriages Prevented (37)",
+                    "🎓 Out-of-School Children Mainstreamed (162)",
+                    "💧 Girls Educated on Menstrual Health (832)",
+                    "🩺 ASHA & Anganwadi Workers Trained (270)",
                   ]?.map((item, index) => (
                     <li className="text-gray-600 text-sm" key={index}>
                       {item}
@@ -189,9 +190,7 @@ export default function HomePage() {
                 Causes
               </p>
               <h2 className="text-xl md:text-4xl font-bold text-gray-900">
-                You Can Help Lots of People by
-                <br />
-                Donating Little
+            Educate a girl, Empower generations.
               </h2>
 
               <BottomBorder className="mx-auto my-3" />
@@ -206,7 +205,6 @@ export default function HomePage() {
             >
               <CustomScroll
                 slidesToShow={slidesToShow}
-                dots={true}
                 arrows={true}
                 nextArrow={true}
                 prevArrow={true}
@@ -220,23 +218,25 @@ export default function HomePage() {
                       <motion.div
                         key={index}
                         variants={fadeInUp}
-                        className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow"
+                        className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-shadow border py-4"
                       >
-                        <div className="h-full overflow-hidden">
-                          <img
-                            src={cause.image}
-                            alt={cause.title}
-                            className="w-full h-[20vh] object-cover hover:scale-105 transition-transform duration-300"
-                          />
+                        <div className="text-center py-2">
+                          <div className="bg-green-700 text-white w-12 h-12 rounded-2xl mx-auto flex justify-center items-center">
+                          {cause.icon}
                         </div>
-                        <div className="p-6 flex-grow flex flex-col">
-                          <h3 className="text-xl font-bold text-gray-900 mb-4">
+                         <h3 className="text-xl font-bold text-gray-900">
                             {cause.title}
                           </h3>
+                        </div>
+                        <div className="px-6 py-2 flex-grow flex flex-col">
+                          {/* <h3 className="text-xl font-bold text-gray-900 mb-4">
+                            {cause.title}
+                          </h3> */}
                           <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow line-clamp-6">
                             {cause.description}
                           </p>
                           <CustomButton
+                          size="sm"
                             handleClick={() =>
                               navigate(
                                 index === 3 ? "/target-area" : "/vision&mission"
@@ -280,7 +280,7 @@ export default function HomePage() {
                 </h2>
                 <BottomBorder className="my-2" />
                 <p className="text-gray-600 mb-3 leading-relaxed">
-                  GAMANA (meaning "The Way") is a voluntary, non-profit
+                  GAMANA is a voluntary, non-profit
                   organization rooted in the Amaravati region of Andhra Pradesh,
                   India. Founded in 2007, GAMANA is dedicated to promoting child
                   rights, gender equality..

@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
       </section>
       <footer>
-        <div className="w-4/5 mx-auto py-14">
+        <div className="mx-auto p-14">
           <div className="grid md:grid-cols-4 gap-8 pb-3">
             <div>
               <OrgLogo />
@@ -122,7 +122,7 @@ export default function Footer() {
                       <FaLocationDot className="w-3 h-3" />
                     </span>
                     <p className="my-auto">
-                      GAMANA (The Way) 2-76. Ananthavaram Village, Thullur
+                      GAMANA 2-76. Ananthavaram Village, Thullur
                       Mandal, Guntur District, Andhra Pradesh – 522 236, India
                     </p>
                   </div>

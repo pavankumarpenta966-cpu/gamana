@@ -2,12 +2,11 @@
 import { motion } from "framer-motion";
 import {
   FaFacebookF,
-  FaTwitter,
   FaInstagram,
   FaLinkedinIn,
   FaYoutube
 } from "react-icons/fa";
-
+import { FaXTwitter } from "react-icons/fa6";
 const SocialIcons = ({ className = "" }) => {
   const socialLinks = [
     {
@@ -19,7 +18,7 @@ const SocialIcons = ({ className = "" }) => {
     },
     {
       name: "Twitter",
-      icon: FaTwitter,
+      icon: FaXTwitter,
       url: "https://www.twitter.com/gamana_theway",
       color: "#1DA1F2",
       hoverColor: "#0C8BD9",

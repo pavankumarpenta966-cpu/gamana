@@ -158,7 +158,7 @@ const ContactPage = () => {
                         <FaMapMarkerAlt className="text-green-600 group-hover:text-white transition-colors" />
                       </div>
                       <div className="text-gray-700">
-                        <p className="font-medium mb-1">GAMANA (The Way)</p>
+                        <p className="font-medium mb-1">GAMANA</p>
                         <p className="text-sm leading-relaxed">
                           2-78. Ananthavaram Village,
                           <br />

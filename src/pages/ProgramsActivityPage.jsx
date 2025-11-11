@@ -38,7 +38,7 @@ export default function ProgramsActivityPage() {
                         <Image
                           src={item.url}
                           alt={item.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-[35vh] object-cover"
                           removeWrapper
                         />
                       )}
@@ -67,7 +67,7 @@ export default function ProgramsActivityPage() {
                         <Image
                           src={item.url}
                           alt={item.title}
-                          className="w-full h-full object-cover"
+                          className="w-full h-[35vh] object-cover"
                           removeWrapper
                         />
                       )}

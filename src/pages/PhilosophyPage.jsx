@@ -4,6 +4,7 @@ import PageHeader from "../sections/PageHeader";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import PartnershipPage from "./PartnershipPage";
+import { GoDotFill } from "react-icons/go";
 export default function PhilosophyPage() {
   const fadeInRight = {
     initial: { opacity: 0, x: 60 },
@@ -126,7 +127,7 @@ export default function PhilosophyPage() {
               foreign contributions for social development purposes.
             </p>
             {[
-              "Registered Name: GAMANA (The Way)",
+              "Registered Name: GAMANA",
               "Registered under the Andhra Pradesh Public Societies Registration Act 35 of 2001, vide Registration Number 467/2007 dated 01.11.2007",
               "Registered and renewed with Ministry of Home Affairs, Government of India, under Foreign Contribution Regulation Act, vide No. 010190503 valid up to 16.06.2030",
               "Registered under Section 12AA of the Income Tax Act 1961, Unique Registration No. AAAAG5306LE20214 from AY 2022-23 to AY 2026-2027",
@@ -141,9 +142,9 @@ export default function PhilosophyPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <div className="flex space-x-1">
-                  <p className="font=-semibold text-gray-600 text-sm leading-relaxed">
-                    {index + 1}.
+                <div className="flex space-x-1 align-middle items-center">
+                  <p className="font=-semibold text-gray-600 text-sm">
+                   <GoDotFill />
                   </p>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {point}
@@ -174,7 +175,8 @@ export default function PhilosophyPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-              >
+                className="flex items-center align-middle gap-1"
+              > <GoDotFill className="text-xs text-gray-600"/>
                 <p className="text-gray-600 text-sm leading-relaxed">{point}</p>
               </motion.div>
             ))}
