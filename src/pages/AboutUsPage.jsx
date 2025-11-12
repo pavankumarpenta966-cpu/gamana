@@ -19,22 +19,26 @@ const AboutUsPage = () => {
     {
       icon: <FaGraduationCap className="text-4xl" />,
       title: "Innovative learning mode",
-      description: "Our training and awareness programs nurture critical thinking and social responsibility.",
+      description:
+        "Our training and awareness programs nurture critical thinking and social responsibility.",
     },
     {
       icon: <FaHandsHelping className="text-4xl" />,
       title: "Local to global linkages",
-      description: "We connect grassroots experiences with national and international advocacy.",
+      description:
+        "We connect grassroots experiences with national and international advocacy.",
     },
     {
       icon: <RiTeamLine className="text-4xl" />,
       title: "Integrated partnerships",
-      description: "We collaborate with schools, government and civil society for lasting systemic change.",
+      description:
+        "We collaborate with schools, government and civil society for lasting systemic change.",
     },
     {
       icon: <FaDonate className="text-4xl" />,
       title: "Transparency & accountability",
-      description: "Every partnership and project is managed with honesty and measurable results.",
+      description:
+        "Every partnership and project is managed with honesty and measurable results.",
     },
   ];
 
@@ -62,17 +66,17 @@ const AboutUsPage = () => {
             >
               <div className="relative bg-gray-100 rounded-lg overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600"
+                  src="/gamana/approach.jpg"
                   alt="About Us"
                   className="w-full h-auto rounded-lg"
                 />
-                <div className="absolute top-4 left-4 bg-white rounded-full p-4 shadow-lg">
+                {/* <div className="absolute top-4 left-4 bg-white rounded-full p-4 shadow-lg">
                   <img
                     src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100"
                     alt="Person"
                     className="w-16 h-16 rounded-full"
                   />
-                </div>               
+                </div>                */}
               </div>
               <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-green-700 rounded-full opacity-20"></div>
             </motion.div>
@@ -85,38 +89,33 @@ const AboutUsPage = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="mb-6">
-                <span className="sub-h-text">
-                  Welcome to GAMANA
-                </span>
+                <span className="sub-h-text">Welcome to GAMANA</span>
                 <h2 className="h-title mt-2 mb-4">
-                  Helping Today
-                  <br />
-                  Helping Tommorow
+                  Childhood is for Learning, Not Earning.
                 </h2>
-                 <BottomBorder className="my-2" />
+                <BottomBorder className="my-2" />
               </div>
 
               <div className="space-y-4 text-gray-600 text-sm leading-relaxed">
                 <p>
-                  GAMANA (meaning "The Way") is a voluntary, non-profit
-                  organization rooted in the Anukurulu region of Andhra Pradesh,
+                  GAMANA (meaning “The Way”) is a voluntary, non-profit
+                  organization rooted in the Amaravati region of Andhra Pradesh,
                   India. Founded in 2007, GAMANA is dedicated to promoting child
                   rights, gender equality and community empowerment through
                   participatory, rights-based approaches. We believe that
-                  sustainable social change begins with the active involvement
-                  of all stakeholders, especially children and adolescents who
-                  are encouraged to voice their rights and shape their own
-                  futures.
+                  sustainable social change begins with informed and empowered
+                  communities; especially children and adolescents who are
+                  encouraged to voice their rights and shape their futures.
                 </p>
 
                 <p>
                   Over the years, GAMANA has focused on preventing early child
                   marriages, ensuring access to quality education, enhancing
-                  adolescent health and nutrition, and empowering women through
-                  self-help groups. Working closely with grassroots
-                  organizations, government agencies, CSR workers, local
+                  adolescent health and menstrual hygiene and strengthening
+                  family and community systems to protect every child. Working
+                  in close collaboration with schools, health workers, local
                   governance bodies and international partners, we have
-                  developed integrated programs that transform distressed into
+                  developed integrated programs that transform awareness into
                   collective action.
                 </p>
               </div>
@@ -167,16 +166,16 @@ const AboutUsPage = () => {
           </div>
         </motion.div>
         {/* Statistics Counter */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mt-4"
-          >
-            <div className=" my-4 cursor-pointer">
-              <InfoCount />
-            </div>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="mt-4"
+        >
+          <div className=" my-4 cursor-pointer">
+            <InfoCount />
+          </div>
+        </motion.div>
 
         {/* What Makes Us Different */}
         <div
@@ -201,7 +200,7 @@ const AboutUsPage = () => {
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mt-2">
                 What Make Us Different
               </h2>
-                     <BottomBorder className="my-2 mx-auto" />
+              <BottomBorder className="my-2 mx-auto" />
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -226,9 +225,7 @@ const AboutUsPage = () => {
               ))}
             </div>
           </div>
-         
         </div>
-         
 
         {/* Partnership Section */}
         <PartnershipPage />
