@@ -59,7 +59,9 @@ export default function Footer() {
                 variant="bordered"
                 className="rounded !bg-white !text-forest"
               >
+                <a  href="https://docs.google.com/forms/d/e/1FAIpQLScTuRIPRH9fFT3kGc3jlFe8nFDXK4hPYwFfsb58bCc9W94CxA/viewform" alt="Volunteer" target="_">
                 Be Volunteer
+                </a>
               </CustomButton>
               <DonateButton />
             </div>

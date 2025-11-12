@@ -88,13 +88,13 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="text-white"
             >
-              <h1 className="text-base md:text-3xl font-bold mb-6 leading-relaxed capitalize text-[#fafafa]">
+              {/* <h1 className="text-base md:text-3xl font-bold mb-6 leading-relaxed capitalize text-[#fafafa]">
                 At the heart of our work lies a simple yet powerful belief that
                 every child deserves to grow up in a safe, educated and
                 nurturing environment where equality, dignity and opportunity
                 are not privileges, but rights
-              </h1>
-              <p className="text-xs md:text-base mb-8 text-gray-200 border-l-4 border-stealOrange px-2 leading-normal">
+              </h1> */}
+              <p className="text-sm md:text-xl mb-8 text-gray-100 border-l-4 border-stealOrange px-2 leading-normal">
                 Over the years, GAMANA has focused on preventing early child
                 marriages, ensuring access to quality education, enhancing
                 adolescent health and menstrual hygiene and strengthening family
