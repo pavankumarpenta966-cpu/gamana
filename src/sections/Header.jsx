@@ -79,7 +79,7 @@ export default function Header() {
               <span className="flex items-center gap-1.5 text-sm">
                 <HiMail className="w-4 h-4 text-white" />
                 <a
-                  href={`mailto:${email}?subject=Inquiry%20from%20Website&body=Hello%20GAMANA%20Team,`}
+                  href={`mailto:${email}`}
                 >
                   {email}
                 </a>

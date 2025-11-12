@@ -119,9 +119,9 @@ export default function HomePage() {
               >
                 <div className="relative flex items-start">
                   <img
-                    src="/gamana/About1.svg"
+                    src="/gamana/about.jpg"
                     alt="Community gathering"
-                    className="rounded-lg shadow-lg  object-cover"
+                    className="rounded-lg shadow-lg  object-cover h-[65vh]"
                   />
                 </div>
               </motion.div>
@@ -132,13 +132,13 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <p className="text-emerald-600 mb-3 font-semibold text-sm">
+                <p className="text-forest mb-3 font-semibold text-sm">
                   About Us
                 </p>
-                <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4 text-gray-900 leading-tight">
-                  Only by Helping Each Other
+                <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4 text-gray-900 leading-tight capitalize">
+                  Say yes to education, 
                   <br />
-                  We Can Make World Better
+                  say no to child marriage.
                 </h2>
                 <BottomBorder className="mr-auto mb-2" />
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">

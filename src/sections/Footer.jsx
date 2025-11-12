@@ -47,7 +47,7 @@ export default function Footer() {
           >
             <div className="text-start">
               <p className="mb-2 font-bold text-2xl tracking-normal leading-relaxed capitalize">
-              Together we change mindsets, together we change lives.
+                Together we change mindsets, together we change lives.
               </p>
               <p className="text-sm md:text-base font-semibold tracking-normal leading-relaxed mb-2">
                 Inspires collective community action the heart of GAMANA’s work.
@@ -111,7 +111,7 @@ export default function Footer() {
                     <span className="bg-forest text-white rounded-full p-2">
                       <HiMail className="w-3 h-3" />
                     </span>
-                    <a href={`tel:+91${phoneNumber}`} className="my-auto">
+                    <a href={`mailto:${email}`} className="my-auto">
                       {email}
                     </a>
                   </div>
@@ -122,8 +122,8 @@ export default function Footer() {
                       <FaLocationDot className="w-3 h-3" />
                     </span>
                     <p className="my-auto">
-                      GAMANA 2-76. Ananthavaram Village, Thullur
-                      Mandal, Guntur District, Andhra Pradesh – 522 236, India
+                      GAMANA 2-76. Ananthavaram Village, Thullur Mandal, Guntur
+                      District, Andhra Pradesh – 522 236, India
                     </p>
                   </div>
                 </li>
