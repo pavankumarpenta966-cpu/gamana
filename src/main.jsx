@@ -7,7 +7,7 @@ import ErrorBoundary from './pages/ErrorBoundary.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ErrorBoundary>
-    <BrowserRouter basename="/gamana">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
     </ErrorBoundary>

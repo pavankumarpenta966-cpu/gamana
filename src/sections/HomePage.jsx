@@ -78,7 +78,7 @@ export default function HomePage() {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat h-[90vh]"
             style={{
               backgroundImage:
-                'linear-gradient(rgba(0, 0, 0, 0.4), rgba(38, 38, 38, 0.6)), url("/gamana/approach.jpg")',
+                'linear-gradient(rgba(0, 0, 0, 0.4), rgba(38, 38, 38, 0.6)), url("/approach.jpg")',
             }}
           />
           <div className="relative md:w-3/4 mx-auto px-4 h-full flex items-center">
@@ -119,7 +119,7 @@ export default function HomePage() {
               >
                 <div className="relative flex items-start">
                   <img
-                    src="/gamana/about.jpg"
+                    src="/about.jpg"
                     alt="Community gathering"
                     className="rounded-lg shadow-lg  object-cover h-[65vh]"
                   />
@@ -258,7 +258,7 @@ export default function HomePage() {
         <div
           className="shadow-lg md:py-16 md:px-8 rounded-lg"
           style={{
-            backgroundImage: ` url("/gamana/bgPrograms.svg")`,
+            backgroundImage: ` url("/bgPrograms.svg")`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
@@ -297,7 +297,7 @@ export default function HomePage() {
 
               <div>
                 <img
-                  src="/gamana/Programs.svg"
+                  src="/Programs.svg"
                   alt="GAMANA community gathering"
                   className="rounded-lg shadow-xl mb-8 border border-emerald-100"
                 />

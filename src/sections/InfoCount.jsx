@@ -27,7 +27,7 @@ export default function InfoCount() {
       viewport={{ once: true }}
       className="bg-cover bg-center bg-no-repeat rounded shadow-xl transition-shadow duration-500"
       style={{
-        backgroundImage: 'url("/gamana/Counter.svg")',
+        backgroundImage: 'url("/Counter.svg")',
       }}
     >
       <div className="mx-auto px-2">

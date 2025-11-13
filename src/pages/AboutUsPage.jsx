@@ -66,7 +66,7 @@ const AboutUsPage = () => {
             >
               <div className="relative bg-gray-100 rounded-lg overflow-hidden">
                 <img
-                  src="/gamana/approach.jpg"
+                  src="/approach.jpg"
                   alt="About Us"
                   className="w-full h-auto rounded-lg"
                 />
@@ -184,7 +184,7 @@ const AboutUsPage = () => {
         <div
           className="relative shadow-lg py-16 px-8 rounded-lg"
           style={{
-            backgroundImage: ` url("/gamana/bgPrograms.svg")`,
+            backgroundImage: ` url("/bgPrograms.svg")`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

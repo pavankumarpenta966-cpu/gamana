@@ -8,14 +8,14 @@ export default function PartnershipPage() {
   const { lg, md, sm, xs } = useBreakpoints();
   const slidesToShow = xs ? 1 : sm ? 2 : md ? 3 : lg ? 4 : 4;
   const partners = [
-    { name: "NSDC", logo: "/gamana/" },
-    { name: "NSDC", logo: "/gamana/" },
-    { name: "NSDC", logo: "/gamana/" },
-    { name: "NSDC", logo: "/gamana/" },
-    { name: "NSDC", logo: "/gamana/" },
-    { name: "NSDC", logo: "/gamana/" },
-    { name: "NSDC", logo: "/gamana/" },
-    { name: "NSDC", logo: "/gamana/" },
+    { name: "NSDC", logo: "/" },
+    { name: "NSDC", logo: "/" },
+    { name: "NSDC", logo: "/" },
+    { name: "NSDC", logo: "/" },
+    { name: "NSDC", logo: "/" },
+    { name: "NSDC", logo: "/" },
+    { name: "NSDC", logo: "/" },
+    { name: "NSDC", logo: "/" },
   ];
 
   return (
@@ -39,7 +39,7 @@ export default function PartnershipPage() {
         <CustomScroll slidesToShow={slidesToShow} dots={true} speed={500}>
           {partners.map((partner, index) => (
             <div key={index} className="px-4 flex items-center justify-center border border-gray-200">
-              <Image src={`${partner.logo}p${index+1}.png`} alt={index} width={"80%"} height={"15vh"} className="mx-auto"/>
+              <Image src={`${partner.logo}p${index+1}.png`} alt={index} width={"90%"} height={"20vh"} className="mx-auto"/>
               {/* <h3 className="text-sm font-medium text-forest leading-5 tracking-normal text-center">
                 {partner.name}
               </h3> */}

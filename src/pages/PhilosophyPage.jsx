@@ -46,7 +46,7 @@ export default function PhilosophyPage() {
         <div
           className="relative shadow-lg py-16 px-8 rounded-lg"
           style={{
-            backgroundImage: ` url("/gamana/bgPrograms.svg")`,
+            backgroundImage: ` url("/bgPrograms.svg")`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

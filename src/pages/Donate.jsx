@@ -13,7 +13,7 @@ export default function Donate() {
       <div
         className="md:w-3/4 mx-auto m-5  shadow-lg rounded-lg"
         style={{
-          backgroundImage: `url("/gamana/donate.svg")`,
+          backgroundImage: `url("/donate.svg")`,
         }}
       >
         {/* <div className="p-5">
@@ -71,7 +71,7 @@ export default function Donate() {
               Scan & Pay
             </h3> */}
             <div className="text-4xl mb-2 flex justify-center">
-              <Image src="/gamana/scanner.jpg" alt="qr code" height={400} />
+              <Image src="/scanner.jpg" alt="qr code" height={400} />
             </div>
           </div>
         </div>     </div>

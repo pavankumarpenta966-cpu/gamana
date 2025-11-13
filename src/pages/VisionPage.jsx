@@ -48,7 +48,7 @@ const VisionPage = () => {
             <div className="flex justify-between items-center gap-4 md:gap-16 flex-col md:flex-row">
               <motion.div {...fadeInLeft}>
                 <Image
-                  src="/gamana/vision.jpg"
+                  src="/vision.jpg"
                   alt="Community meeting"
                   className="w-full h-full object-cover"
                 />
@@ -116,7 +116,7 @@ const VisionPage = () => {
               </motion.div>
               <motion.div {...fadeInLeft}>
                 <Image
-                  src="/gamana/mission.jpg"
+                  src="/mission.jpg"
                   alt="Community meeting"
                   className="w-full h-full object-cover"
                 />

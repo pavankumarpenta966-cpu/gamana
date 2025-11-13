@@ -17,7 +17,7 @@ export const OrgLogo = () => {
       className="flex items-center gap-2 cursor-pointer"
       onClick={() => navigate("/")}
     >
-      <img src="/gamana/192.png" alt="Gamana" className="w-10 h-10" />
+      <img src="/192.png" alt="Gamana" className="w-10 h-10" />
       <div className="flex flex-col">
         <span className="h-text capitalize">GAMANA</span>
         <span className="!text-xs sub-para">The Way for a Better Tomorrow</span>
@@ -35,7 +35,7 @@ export default function Footer() {
         className="relative py-14"
         style={{
           backgroundImage:
-            'linear-gradient(rgba(20, 20, 20, 0.5), rgba(57, 57, 57, 0.5)), url("/gamana/overlay.svg")',
+            'linear-gradient(rgba(20, 20, 20, 0.5), rgba(57, 57, 57, 0.5)), url("/overlay.svg")',
         }}
       >
         <div className="px-4 text-center">

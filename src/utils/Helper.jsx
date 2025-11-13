@@ -120,7 +120,7 @@ export const programs = [
       "Active child protection committees in all 24 villages.",
       "Increased community reporting of child protection issues.",
     ],
-    url: "/gamana/i4.jpg",
+    url: "/i4.jpg",
   },
   {
     title: "Education and Learning Continuity",
@@ -139,7 +139,7 @@ export const programs = [
       "162 out-of-school children mainstreamed.",
       "Improved retention and academic performance among adolescent girls.",
     ],
-    url: "/gamana/vision.jpg",
+    url: "/vision.jpg",
   },
   {
     title: "Adolescent Empowerment and Life Skills",
@@ -157,7 +157,7 @@ export const programs = [
       "Development of child leaders who influence community attitudes toward child marriage.",
       "Sustained behavioural change among boys on gender equality and respect for women.",
     ],
-    url: "/gamana/i3.jpg",
+    url: "/i3.jpg",
   },
   {
     title: "Menstrual Health and Hygiene (MHH) Education",
@@ -175,7 +175,7 @@ export const programs = [
       "Improved school attendance during menstruation.",
       "Strengthened community dialogue on women’s health and dignity.",
     ],
-    url: "/gamana/i1.jpg",
+    url: "/i1.jpg",
   },
   {
     title: "Community Mobilisation and Governance",
@@ -193,7 +193,7 @@ export const programs = [
       "Greater community vigilance and accountability in reporting early marriages.",
       "Institutionalization of child rights as part of village development plans.",
     ],
-    url: "/gamana/i5.jpg",
+    url: "/i5.jpg",
   },
   {
     title: "Monitoring, Evaluation & Data Systems",
@@ -210,6 +210,6 @@ export const programs = [
       "Data-driven advocacy for stronger child protection mechanisms.",
       "Transparency and accountability in all program operations.",
     ],
-    url: "/gamana/i6.jpg",
+    url: "/i6.jpg",
   },
 ];

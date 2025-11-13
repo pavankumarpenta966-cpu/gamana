@@ -30,7 +30,7 @@ export default function OurApproachPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <motion.div {...fadeInLeft}>
               <Image
-                src="/gamana/approach.jpg"
+                src="/approach.jpg"
                 alt="Community meeting"
                 className="w-full h-full object-cover"
               />
@@ -93,7 +93,7 @@ export default function OurApproachPage() {
             <div
               className="relative shadow-lg rounded-lg"
               style={{
-                backgroundImage: ` url("/gamana/bgPrograms.svg")`,
+                backgroundImage: ` url("/bgPrograms.svg")`,
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
                 backgroundRepeat: "no-repeat",

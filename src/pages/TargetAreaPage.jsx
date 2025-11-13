@@ -63,7 +63,7 @@ export default function TargetAreaPage() {
 
           <motion.div {...fadeInUp} className="flex justify-center mt-4">
             <Image
-              src="/gamana/target.jpg"
+              src="/target.jpg"
               alt="Community meeting"
               className="object-contain"
             />

@@ -118,7 +118,7 @@ export default function Team() {
           </motion.div>
       <div className="mt-4">
         <h2 className="text-2xl font-bold mb-2 text-gray-900">Organogram</h2>
-        <Image src="/gamana/organogram.jpg" alt="organogram"/>
+        <Image src="/organogram.jpg" alt="organogram"/>
       </div>
         </div>
       </section>

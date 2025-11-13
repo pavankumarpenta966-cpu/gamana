@@ -103,7 +103,7 @@ export default function TestimonialsSection() {
                 className="relative rounded-sm "
               >
                 <img
-                src="/gamana/Testimonials.svg"
+                src="/Testimonials.svg"
                   alt="Community activity"
                   className=" h-[200px] md:h-[300px] lg:h-[430px] w-[450px] "
                 />
