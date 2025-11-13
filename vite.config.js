@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
-
 export default defineConfig({ 
-  base: '/gamana/', 
+  // base: '/gamana/', 
+  // build: {
+  //   outDir: 'dist/gamana'
+  // },
   plugins: [
     react(),
     VitePWA({
@@ -14,8 +16,8 @@ export default defineConfig({
         'robots.txt',
       ],
       manifest: {
-        name: 'Gamana',
-        short_name: 'Gamana',
+        name: 'GAMANA',
+        short_name: 'GAMANA',
         description: 'A React app built with Vite and PWA support',
         theme_color: '#ffffff',
         icons: [
